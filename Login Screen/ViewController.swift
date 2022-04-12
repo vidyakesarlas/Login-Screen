@@ -21,10 +21,12 @@ class ViewController: UIViewController {
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         if let email = userName.text, let password = password.text{
-            if email == "abc@gmail.com" && password == "ABC123"{
+            if email == "vidya@i-exceed.com" && password == "Appzillon@123"{
                 self.performSegue(withIdentifier: "next" , sender: self)
             }else{
-             print("UNSUCCESSFUL LOGIN")
+                let alertContoller = UIAlertController (title: "Unsuccesful login" , message: "Please enter valid credentials", preferredStyle: .alert)
+                alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+                present(alertContoller, animated: true, completion: nil)
             }
         }
     }
