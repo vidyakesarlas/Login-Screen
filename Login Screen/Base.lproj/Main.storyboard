@@ -16,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="173-1737965_yellow-circle-yellow-small-circle-1" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-UD-hEl">
-                                <rect key="frame" x="-53" y="3.5" width="286" height="167"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="J9A-5d-rZn"/>
-                                    <constraint firstAttribute="height" constant="167" id="qae-1g-eQD"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4Fv-yL-5bg">
-                                <rect key="frame" x="57" y="223" width="300" height="600"/>
+                                <rect key="frame" x="57" y="145" width="300" height="565"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vOL-yZ-7VA">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="95"/>
@@ -55,7 +48,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4aD-6b-vjw">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4aD-6b-vjw">
                                         <rect key="frame" x="0.0" y="175" width="300" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="9dg-5b-Ad1"/>
@@ -72,7 +65,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-jD-Nx2">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-jD-Nx2">
                                         <rect key="frame" x="0.0" y="289" width="300" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="me9-OO-PmV"/>
@@ -89,8 +82,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password?" titleAlignment="center"/>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="Zeh-74-fwI">
-                                        <rect key="frame" x="0.0" y="413" width="300" height="187"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Zeh-74-fwI">
+                                        <rect key="frame" x="0.0" y="413" width="300" height="152"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCf-Sl-jwo">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="61"/>
@@ -118,7 +111,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZh-eu-WyO">
-                                                <rect key="frame" x="0.0" y="126" width="300" height="61"/>
+                                                <rect key="frame" x="0.0" y="91" width="300" height="61"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQX-ew-fZ3">
                                                         <rect key="frame" x="-1" y="9" width="200" height="20"/>
@@ -170,22 +163,29 @@
                                     <constraint firstItem="Zeh-74-fwI" firstAttribute="width" secondItem="4Fv-yL-5bg" secondAttribute="width" id="w8e-ZO-qWn"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="173-1737965_yellow-circle-yellow-small-circle-1" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-UD-hEl">
+                                <rect key="frame" x="-87" y="0.0" width="286" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="7f3-2a-nWA"/>
+                                    <constraint firstAttribute="height" constant="100" id="gqG-Os-5S1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Fv-yL-5bg" firstAttribute="top" secondItem="Caz-UD-hEl" secondAttribute="bottom" constant="52.5" id="6m5-WM-esI"/>
+                            <constraint firstItem="Caz-UD-hEl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-88" id="94f-f0-uBv"/>
+                            <constraint firstItem="4Fv-yL-5bg" firstAttribute="top" secondItem="Caz-UD-hEl" secondAttribute="bottom" constant="45" id="HwS-o3-fZ0"/>
                             <constraint firstItem="4Fv-yL-5bg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="Rai-a6-g9x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Caz-UD-hEl" secondAttribute="trailing" constant="215" id="VpN-YM-K9a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Fv-yL-5bg" secondAttribute="trailing" constant="57" id="ZrZ-MO-Nb0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Caz-UD-hEl" secondAttribute="trailing" constant="181" id="gQN-qf-AQZ"/>
-                            <constraint firstItem="Caz-UD-hEl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-84.5" id="wEG-Rs-Jyo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yWo-xC-tX1"/>
                     <connections>
                         <outlet property="loginButton" destination="daw-lj-CxH" id="mY2-d9-7oh"/>
-                        <outlet property="password" destination="Vea-jD-Nx2" id="iTh-r2-E8q"/>
-                        <outlet property="userName" destination="4aD-6b-vjw" id="4vD-2T-PbX"/>
+                        <outlet property="passwordTxtField" destination="Vea-jD-Nx2" id="iTh-r2-E8q"/>
+                        <outlet property="userNameTxtField" destination="4aD-6b-vjw" id="4vD-2T-PbX"/>
                         <segue destination="v9O-gK-4sv" kind="push" identifier="next" id="MTh-OE-Njh"/>
                     </connections>
                 </viewController>
@@ -193,13 +193,27 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Next View Controller-->
         <scene sceneID="93U-gL-luh">
             <objects>
-                <viewController id="v9O-gK-4sv" sceneMemberID="viewController">
+                <viewController id="v9O-gK-4sv" customClass="NextViewController" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFE-97-mSS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-0b-RNJ">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHO-zG-mzZ">
+                                        <rect key="frame" x="33" y="32" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="l9A-Dj-szr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -207,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAn-f4-2G2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="92"/>
+            <point key="canvasLocation" x="1804.3478260869567" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xNB-HM-R5e">
@@ -232,6 +246,9 @@
         <image name="173-1737965_yellow-circle-yellow-small-circle-1" width="966" height="759"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
