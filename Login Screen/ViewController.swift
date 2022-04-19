@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isEmailValid = false
     var isPasswordValid = false
     
+    var networkManager = NetworkManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,33 +90,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        let url = URL(string: "https://jsonplaceholder.typicode.com/todos")
-        guard let rUrl = url else { return print("Error") }
-       
-        var request = URLRequest(url: rUrl)
-        request.httpMethod = "POST"
         
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        var isLoginSuccess: Bool
+       isLoginSuccess = networkManager.callAPI()
         
- 
-        let postString = "userId=300&title=My urgent task&completed=false"
-
-        request.httpBody = postString.data(using: String.Encoding.utf8);
-
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-
-                if let error = error {
-                    print("Error took place \(error)")
-                    return
-                }
-        
-                if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                    print("Response data string:\n \(dataString)")
-                }
+        if isLoginSuccess{
+            self.performSegue(withIdentifier: "next" , sender: self)
         }
-        task.resume()
-        
+        else{
+            let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
+            alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+            present(alertContoller, animated: true, completion: nil)
+            
+        }
         
         
         //        if let email = userNameTxtField.text, let password = passwordTxtField.text{
