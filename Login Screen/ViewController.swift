@@ -90,19 +90,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
+     let loginSuccess = networkManager.callAPI(userCompletionHandler: { status in
+            if status{
+              //  print("HI")
+                DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "next" , sender: self)
+                }
+            }
+            else{
+                
+                DispatchQueue.main.async{
+                let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
+                alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+                self.present(alertContoller, animated: true, completion: nil)
+                }
+            }
+        })
         
-        var isLoginSuccess: Bool
-       isLoginSuccess = networkManager.callAPI()
-        
-        if isLoginSuccess{
-            self.performSegue(withIdentifier: "next" , sender: self)
-        }
-        else{
-            let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
-            alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-            present(alertContoller, animated: true, completion: nil)
-            
-        }
+      
         
         
         //        if let email = userNameTxtField.text, let password = passwordTxtField.text{
