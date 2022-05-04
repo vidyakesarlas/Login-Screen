@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         userNameTxtField.delegate = self
         passwordTxtField.delegate = self
         // Do any additional setup after loading the view.
@@ -48,6 +49,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
+        
+    }
     
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

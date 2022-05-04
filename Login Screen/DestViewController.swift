@@ -1,17 +1,22 @@
 //
-//  NextViewController.swift
+//  DestViewController.swift
 //  Login Screen
 //
-//  Created by vidya.k on 14/04/22.
+//  Created by vidya.k on 02/05/22.
 //
 
 import UIKit
 
-class NextViewController: UIViewController {
+class DestViewController: UIViewController {
 
+    var x: String?
+    
+    @IBOutlet weak var labl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.labl.text = x
+        print(x)
         // Do any additional setup after loading the view.
     }
     
