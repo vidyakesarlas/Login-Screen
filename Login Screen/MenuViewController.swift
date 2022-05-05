@@ -68,11 +68,18 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let nibCell = UINib(nibName: menuID, bundle: nil)
         
         menuCollectionView.register(nibCell, forCellWithReuseIdentifier: menuID)
+        
+        
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .vertical //.horizontal
         layout.minimumLineSpacing = 11
         layout.minimumInteritemSpacing = 2
+        
+        menuCollectionView.layer.cornerRadius = 5.0
+        menuCollectionView.layer.masksToBounds = true
+     //   contentView.layer.cornerRadius = 5.0
+        
         menuCollectionView.setCollectionViewLayout(layout, animated: true)
         
         
@@ -160,6 +167,8 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: menuID, for: indexPath) as! MenuCollectionViewCell
         
+        
+        cell.layer.cornerRadius = 25
         let concern = concerns[indexPath.row]
         
         
@@ -200,8 +209,8 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // Create a new variable to store the instance of the SecondViewController
         // set the variable from the SecondViewController that will receive the data
-        let destinationVC = segue.destination as! DestViewController
-        destinationVC.x = y
+        let destinationVC = segue.destination as! DoctorsViewController
+        destinationVC.docType = y
         destinationVC.navigationItem.title = y
     }
     

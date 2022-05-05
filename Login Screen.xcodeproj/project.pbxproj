@@ -25,6 +25,10 @@
 		A8DAAA8D2803FFFD00440CA3 /* Login_ScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA8C2803FFFD00440CA3 /* Login_ScreenUITests.swift */; };
 		A8DAAA8F2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA8E2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift */; };
 		A8E71791281FB1310095BFF2 /* DestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71790281FB1310095BFF2 /* DestViewController.swift */; };
+		A8E71794282250F80095BFF2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */; };
+		A8E71795282250F80095BFF2 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */; };
+		A8E71797282252C10095BFF2 /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71796282252C10095BFF2 /* DoctorsViewController.swift */; };
+		A8E71799282286760095BFF2 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71798282286760095BFF2 /* Doctors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		A8DAAA8C2803FFFD00440CA3 /* Login_ScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ScreenUITests.swift; sourceTree = "<group>"; };
 		A8DAAA8E2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A8E71790281FB1310095BFF2 /* DestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestViewController.swift; sourceTree = "<group>"; };
+		A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		A8E71796282252C10095BFF2 /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
+		A8E71798282286760095BFF2 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,9 @@
 				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
 				A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */,
 				A8DAAA712803FFFC00440CA3 /* Main.storyboard */,
+				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
+				A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */,
+				A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */,
 				A8E71790281FB1310095BFF2 /* DestViewController.swift */,
 				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
 				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
@@ -137,6 +148,7 @@
 				A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */,
 				A81F800F2811122D005150BF /* HealthConcernViewController.swift */,
 				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
+				A8E71798282286760095BFF2 /* Doctors.swift */,
 				A8DAAA742803FFFD00440CA3 /* Assets.xcassets */,
 				A8DAAA762803FFFD00440CA3 /* LaunchScreen.storyboard */,
 				A8DAAA792803FFFD00440CA3 /* Info.plist */,
@@ -269,6 +281,7 @@
 				A8DAAA782803FFFD00440CA3 /* LaunchScreen.storyboard in Resources */,
 				A8DAAA752803FFFD00440CA3 /* Assets.xcassets in Resources */,
 				A8DAAA732803FFFC00440CA3 /* Main.storyboard in Resources */,
+				A8E71795282250F80095BFF2 /* CustomTableViewCell.xib in Resources */,
 				A8D284092811593B006FA34D /* MenuCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +313,10 @@
 				A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */,
 				A8E71791281FB1310095BFF2 /* DestViewController.swift in Sources */,
 				A8D4D62C2806D76800AD9C20 /* String+Extension.swift in Sources */,
+				A8E71799282286760095BFF2 /* Doctors.swift in Sources */,
+				A8E71794282250F80095BFF2 /* CustomTableViewCell.swift in Sources */,
 				A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */,
+				A8E71797282252C10095BFF2 /* DoctorsViewController.swift in Sources */,
 				A8DAAA702803FFFC00440CA3 /* ViewController.swift in Sources */,
 				A8DAAA6C2803FFFC00440CA3 /* AppDelegate.swift in Sources */,
 				A8A1D1B5281277CD0061175C /* RoundedView.swift in Sources */,

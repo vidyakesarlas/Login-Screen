@@ -15,7 +15,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.layer.cornerRadius = 5.0
+        contentView.layer.masksToBounds = true
+                
         // Initialization code
     }
+    
 
 }
