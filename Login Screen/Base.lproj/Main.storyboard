@@ -79,7 +79,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Nkd-Qo-22c"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password?" titleAlignment="center"/>
                                     </button>
@@ -310,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sQ2-Cf-UyK">
-                                <rect key="frame" x="0.0" y="60" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doctorCell" id="5rJ-zE-nhN" customClass="CustomTableViewCell" customModule="Login_Screen" customModuleProvider="target">
@@ -327,40 +327,13 @@
                                     <outlet property="delegate" destination="CQo-7u-QTG" id="BT8-0g-jzb"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="Q7G-Ye-pfn">
-                                <rect key="frame" x="15" y="10" width="384" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-6r-sHq">
-                                        <rect key="frame" x="0.0" y="0.0" width="4" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-OO-jpV">
-                                        <rect key="frame" x="124" y="0.0" width="36" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPERIENCE(yrs)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-R3-HD1">
-                                        <rect key="frame" x="280" y="0.0" width="104" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pPL-gx-gRb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q7G-Ye-pfn" firstAttribute="top" secondItem="pPL-gx-gRb" secondAttribute="top" constant="10" id="Kn2-BZ-Rkx"/>
                             <constraint firstItem="pPL-gx-gRb" firstAttribute="bottom" secondItem="sQ2-Cf-UyK" secondAttribute="bottom" id="TQc-NF-TTf"/>
                             <constraint firstItem="sQ2-Cf-UyK" firstAttribute="leading" secondItem="pPL-gx-gRb" secondAttribute="leading" id="ipm-sb-SS1"/>
-                            <constraint firstItem="sQ2-Cf-UyK" firstAttribute="top" secondItem="Q7G-Ye-pfn" secondAttribute="bottom" constant="10" id="kdd-Ul-MvA"/>
-                            <constraint firstItem="pPL-gx-gRb" firstAttribute="trailing" secondItem="Q7G-Ye-pfn" secondAttribute="trailing" constant="15" id="nKY-9C-Nsd"/>
-                            <constraint firstItem="Q7G-Ye-pfn" firstAttribute="leading" secondItem="pPL-gx-gRb" secondAttribute="leading" constant="15" id="sZP-0m-qj2"/>
-                            <constraint firstItem="sQ2-Cf-UyK" firstAttribute="top" secondItem="pPL-gx-gRb" secondAttribute="top" constant="60" id="vae-5E-9Qd"/>
+                            <constraint firstItem="sQ2-Cf-UyK" firstAttribute="top" secondItem="pPL-gx-gRb" secondAttribute="top" id="vae-5E-9Qd"/>
                             <constraint firstItem="sQ2-Cf-UyK" firstAttribute="trailing" secondItem="pPL-gx-gRb" secondAttribute="trailing" id="yGU-rb-Olg"/>
                         </constraints>
                     </view>

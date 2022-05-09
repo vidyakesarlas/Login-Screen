@@ -76,7 +76,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.minimumLineSpacing = 11
         layout.minimumInteritemSpacing = 2
         
-        menuCollectionView.layer.cornerRadius = 5.0
+        menuCollectionView.layer.cornerRadius = 1.0
         menuCollectionView.layer.masksToBounds = true
      //   contentView.layer.cornerRadius = 5.0
         
@@ -108,9 +108,8 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //(latitude: -22.963451, longitude: -43.198242) - rio de janeiro
         
         //(latitude:  12.971599, longitude:  77.594566) - bengaluru
-        let location = CLLocation(latitude: lat ?? 12.971599, longitude: long ?? 77.594566)
-        location.geocode(latitude: lat ?? 12.971599, longitude: long
-                         ?? 77.594566, completion: { placemark, error in
+        let location = CLLocation(latitude: lat ?? 0.000000000, longitude: long ?? 0.0000000)
+        location.geocode(latitude: lat ?? 0.000000000, longitude: long ?? 0.000000000, completion: { placemark, error in
             if let error = error as? CLError {
                 print("CLError:", error)
                 return
