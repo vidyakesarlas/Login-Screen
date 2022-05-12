@@ -12,8 +12,8 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     
-    var lat: CLLocationDegrees?
-    var long: CLLocationDegrees?
+    var city: String?
+
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     var y: String?
@@ -62,6 +62,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationMan.delegate = self
         locationMan.requestWhenInUseAuthorization()
         locationMan.requestLocation()
+        
         self.navigationController?.isNavigationBarHidden = false
         
         
@@ -105,43 +106,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func locationName(_ sender: Any) {
         
-        //(latitude: -22.963451, longitude: -43.198242) - rio de janeiro
-        
-        //(latitude:  12.971599, longitude:  77.594566) - bengaluru
-        let location = CLLocation(latitude: lat ?? 0.000000000, longitude: long ?? 0.0000000)
-        location.geocode(latitude: lat ?? 0.000000000, longitude: long ?? 0.000000000, completion: { placemark, error in
-            if let error = error as? CLError {
-                print("CLError:", error)
-                return
-            }
-            else if let placemark = placemark?.first {
-                // you should always update your UI in the main thread
-                DispatchQueue.main.async {
-                    //  update UI here
-                    //                    print("name:", placemark.name ?? "unknown")
-                    //
-                    //                    print("address1:", placemark.thoroughfare ?? "unknown")
-                    //                    print("address2:", placemark.subThoroughfare ?? "unknown")
-                    //                    print("neighborhood:", placemark.subLocality ?? "unknown")
-                    print("city:", placemark.locality ?? "unknown")
-                    
-                    self.cityName.title = "location: \(placemark.locality!)"
-                    
-                    //                    print("state:", placemark.administrativeArea ?? "unknown")
-                    //                    print("subAdministrativeArea:", placemark.subAdministrativeArea ?? "unknown")
-                    //                    print("zip code:", placemark.postalCode ?? "unknown")
-                    //                    print("country:", placemark.country ?? "unknown", terminator: "\n\n")
-                    //
-                    //                    print("isoCountryCode:", placemark.isoCountryCode ?? "unknown")
-                    //                    print("region identifier:", placemark.region?.identifier ?? "unknown")
-                    //
-                    //                    print("timezone:", placemark.timeZone ?? "unknown", terminator:"\n\n")
-                    
-                    // Mailind Address
-                    //  print(placemark.mailingAddress ?? "unknown")
-                }
-            }
-        })
+        self.locationMan.requestLocation()
         
     }
     
@@ -201,6 +166,12 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    func getCoordinates(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> (CLLocationDegrees, CLLocationDegrees){
+        
+        return (latitude, longitude)
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Create a variable to store the name the user entered on textField
@@ -249,7 +220,53 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
      }
      */
     
+    
+    
+    func newOne(lati:  CLLocationDegrees, longi: CLLocationDegrees){
+        //(latitude: -22.963451, longitude: -43.198242) - rio de janeiro
+        
+        //(latitude:  12.971599, longitude:  77.594566) - bengaluru
+        let location = CLLocation(latitude: lati, longitude: longi)
+        location.geocode(latitude: lati, longitude: longi, completion: { placemark, error in
+            if let error = error as? CLError {
+                print("CLError:", error)
+                return
+            }
+            else if let placemark = placemark?.first {
+                // you should always update your UI in the main thread
+                DispatchQueue.main.async {
+                    //  update UI here
+                    //                    print("name:", placemark.name ?? "unknown")
+                    //
+                    //                    print("address1:", placemark.thoroughfare ?? "unknown")
+                    //                    print("address2:", placemark.subThoroughfare ?? "unknown")
+                    //                    print("neighborhood:", placemark.subLocality ?? "unknown")
+                    print("city:", placemark.locality ?? "unknown")
+                    
+                    self.cityName.title = "location: \(placemark.locality!)"
+                    
+                    //                    print("state:", placemark.administrativeArea ?? "unknown")
+                    //                    print("subAdministrativeArea:", placemark.subAdministrativeArea ?? "unknown")
+                    //                    print("zip code:", placemark.postalCode ?? "unknown")
+                    //                    print("country:", placemark.country ?? "unknown", terminator: "\n\n")
+                    //
+                    //                    print("isoCountryCode:", placemark.isoCountryCode ?? "unknown")
+                    //                    print("region identifier:", placemark.region?.identifier ?? "unknown")
+                    //
+                    //                    print("timezone:", placemark.timeZone ?? "unknown", terminator:"\n\n")
+                    
+                    // Mailind Address
+                    //  print(placemark.mailingAddress ?? "unknown")
+                
+            }
+        }
+        })
+    }
 }
+
+
+    
+
 
 extension CLLocation{
     
@@ -273,13 +290,16 @@ extension MenuViewController: CLLocationManagerDelegate{
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.last{
+            
             locationMan.stopUpdatingLocation()
-            lat = location.coordinate.latitude
-            long = location.coordinate.longitude
-            print(lat)
-            print(long)
-            //    weatherManager.fetchWeather(latitude: lat, longitude: lon)
+           let  lat = location.coordinate.latitude
+           let long = location.coordinate.longitude
+            print("Latitude:::: +\(lat)")
+            print("Longitude:::: +\(long)")
+           
+            newOne(lati: lat, longi: long)
         }
         
     }

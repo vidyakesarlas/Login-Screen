@@ -8,16 +8,17 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var cellView: UIView!
+    
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 5.0
-        contentView.layer.masksToBounds = true
-                
+        cellView.layer.cornerRadius = 8.0
+        cellView.layer.masksToBounds = true
+        cellView.layer.backgroundColor = UIColor.colorFromHex("#FAFAFA").cgColor
         // Initialization code
     }
     

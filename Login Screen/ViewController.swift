@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -21,6 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        blueView.layer.cornerRadius = 55
         self.navigationController?.isNavigationBarHidden = true
         userNameTxtField.delegate = self
         passwordTxtField.delegate = self

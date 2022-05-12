@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-1t-xGt">
-                        <rect key="frame" x="0.0" y="19" width="557" height="175"/>
+                        <rect key="frame" x="0.0" y="0.0" width="557" height="175"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-tg-TjH">
                                 <rect key="frame" x="10" y="25" width="100" height="100"/>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="xDT-Vx-UhQ" firstAttribute="leading" secondItem="WE7-tg-TjH" secondAttribute="trailing" constant="25" id="371-pA-KJp"/>
                             <constraint firstItem="wg8-yK-t6B" firstAttribute="leading" secondItem="WE7-tg-TjH" secondAttribute="trailing" constant="25" id="7Pr-LV-6sF"/>
@@ -70,7 +70,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-4t-ekG">
-                        <rect key="frame" x="0.0" y="199" width="557" height="150"/>
+                        <rect key="frame" x="0.0" y="180" width="557" height="169"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jY9-p9-ugt">
                                 <rect key="frame" x="25" y="15" width="450" height="21"/>
@@ -91,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-uW-b5c">
-                                <rect key="frame" x="337" y="90" width="200" height="45"/>
+                                <rect key="frame" x="337" y="109" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.092861257493495941" green="0.85087841749191284" blue="0.95038753747940063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="e6h-RB-Nei"/>
@@ -101,11 +101,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Book Appointment"/>
                                 <connections>
-                                    <action selector="bookAppointment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9ud-UB-GMe"/>
+                                    <action selector="didTapButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="T0J-iw-0al"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XbR-uW-b5c" secondAttribute="trailing" constant="20" id="6ep-Pe-880"/>
                             <constraint firstItem="jY9-p9-ugt" firstAttribute="top" secondItem="KZ8-4t-ekG" secondAttribute="top" constant="15" id="Dr9-F1-USd"/>
@@ -119,15 +119,16 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="KZ8-4t-ekG" secondAttribute="bottom" id="3zA-ux-NeI"/>
                     <constraint firstAttribute="trailing" secondItem="KZ8-4t-ekG" secondAttribute="trailing" id="BCC-6f-sHX"/>
+                    <constraint firstItem="BSq-1t-xGt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OdP-H7-gGH"/>
                     <constraint firstAttribute="trailing" secondItem="BSq-1t-xGt" secondAttribute="trailing" id="RNP-UV-Sj1"/>
                     <constraint firstItem="BSq-1t-xGt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hMH-Nk-fyD"/>
                     <constraint firstItem="KZ8-4t-ekG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jtF-YD-wjZ"/>
-                    <constraint firstItem="KZ8-4t-ekG" firstAttribute="top" secondItem="BSq-1t-xGt" secondAttribute="bottom" constant="5" id="lwP-PB-v0g"/>
-                    <constraint firstItem="KZ8-4t-ekG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="199" id="rFy-pR-lSd"/>
+                    <constraint firstItem="KZ8-4t-ekG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="180" id="rFy-pR-lSd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bookAppointmentt" destination="XbR-uW-b5c" id="ujB-a4-XfN"/>
                 <outlet property="clinicAddress" destination="jY9-p9-ugt" id="ibH-Ep-eN1"/>
                 <outlet property="designation" destination="xDT-Vx-UhQ" id="fFF-uP-oDZ"/>
                 <outlet property="doctImage" destination="WE7-tg-TjH" id="lnE-gb-aPh"/>
@@ -135,13 +136,14 @@
                 <outlet property="experience" destination="wg8-yK-t6B" id="5yS-HB-SfX"/>
                 <outlet property="fees" destination="jwL-38-I19" id="2ur-ih-9BZ"/>
                 <outlet property="viewOne" destination="BSq-1t-xGt" id="kw0-xD-ldF"/>
+                <outlet property="viewtwo" destination="KZ8-4t-ekG" id="8vV-My-N5Y"/>
             </connections>
             <point key="canvasLocation" x="-2.1739130434782612" y="282.25446428571428"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

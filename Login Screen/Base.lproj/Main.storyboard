@@ -164,26 +164,28 @@
                                     <constraint firstItem="Zeh-74-fwI" firstAttribute="width" secondItem="4Fv-yL-5bg" secondAttribute="width" id="w8e-ZO-qWn"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BLEU" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-UD-hEl">
-                                <rect key="frame" x="-87" y="-88" width="286" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nad-CA-Wsq" userLabel="blueView">
+                                <rect key="frame" x="-52" y="0.0" width="201" height="103"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="7f3-2a-nWA"/>
-                                    <constraint firstAttribute="height" constant="100" id="gqG-Os-5S1"/>
+                                    <constraint firstAttribute="height" constant="103" id="ncA-l7-o8j"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Caz-UD-hEl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-88" id="94f-f0-uBv"/>
-                            <constraint firstItem="4Fv-yL-5bg" firstAttribute="top" secondItem="Caz-UD-hEl" secondAttribute="bottom" constant="45" id="HwS-o3-fZ0"/>
+                            <constraint firstItem="Nad-CA-Wsq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5Nv-kX-9Zf"/>
                             <constraint firstItem="4Fv-yL-5bg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="Rai-a6-g9x"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Caz-UD-hEl" secondAttribute="trailing" constant="215" id="VpN-YM-K9a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Fv-yL-5bg" secondAttribute="trailing" constant="57" id="ZrZ-MO-Nb0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nad-CA-Wsq" secondAttribute="trailing" constant="265" id="cYn-ba-t9w"/>
+                            <constraint firstItem="4Fv-yL-5bg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="fMM-Yg-RNv"/>
+                            <constraint firstItem="Nad-CA-Wsq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-52" id="xt5-fJ-P5m"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Back" id="yWo-xC-tX1"/>
                     <connections>
+                        <outlet property="blueView" destination="Nad-CA-Wsq" id="Sth-jE-964"/>
                         <outlet property="loginButton" destination="daw-lj-CxH" id="mY2-d9-7oh"/>
                         <outlet property="passwordTxtField" destination="Vea-jD-Nx2" id="iTh-r2-E8q"/>
                         <outlet property="userNameTxtField" destination="4aD-6b-vjw" id="4vD-2T-PbX"/>
@@ -268,6 +270,51 @@
             </objects>
             <point key="canvasLocation" x="1790" y="84"/>
         </scene>
+        <!--PopoverViewController-->
+        <scene sceneID="zqS-pn-wLb">
+            <objects>
+                <viewController storyboardIdentifier="PopUp" title="PopoverViewController" id="sh3-bm-H6t" customClass="PopUpWindow" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="juT-I2-nAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qu7-r0-mwI">
+                                <rect key="frame" x="87" y="357" width="240" height="128"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaw-T6-AUy">
+                                        <rect key="frame" x="72" y="47" width="150" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="9W5-di-l0W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zaw-T6-AUy" firstAttribute="top" secondItem="Qu7-r0-mwI" secondAttribute="top" constant="47" id="4Qh-u6-H3H"/>
+                                    <constraint firstAttribute="bottom" secondItem="zaw-T6-AUy" secondAttribute="bottom" constant="47" id="Iem-ut-xNc"/>
+                                    <constraint firstItem="zaw-T6-AUy" firstAttribute="leading" secondItem="Qu7-r0-mwI" secondAttribute="leading" constant="72" id="POU-wd-vRV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vtz-4j-hwI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qu7-r0-mwI" firstAttribute="top" secondItem="vtz-4j-hwI" secondAttribute="top" constant="357" id="Idw-TP-xa6"/>
+                            <constraint firstItem="Qu7-r0-mwI" firstAttribute="leading" secondItem="vtz-4j-hwI" secondAttribute="leading" constant="87" id="Lpn-NF-EP2"/>
+                            <constraint firstItem="Qu7-r0-mwI" firstAttribute="centerX" secondItem="juT-I2-nAZ" secondAttribute="centerX" id="YXL-jj-DdY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yL2-Cl-yB2"/>
+                    <connections>
+                        <outlet property="dateTF" destination="zaw-T6-AUy" id="5Cr-qh-o44"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XsX-Sv-FkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4317" y="84"/>
+        </scene>
         <!--Dest View Controller-->
         <scene sceneID="b0i-59-LR1">
             <objects>
@@ -299,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2H3-od-0m6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4081" y="301"/>
+            <point key="canvasLocation" x="2623" y="776"/>
         </scene>
         <!--Doctors View Controller-->
         <scene sceneID="uZW-Tc-xrB">
@@ -340,6 +387,7 @@
                     <navigationItem key="navigationItem" id="nDb-Wc-2Ot"/>
                     <connections>
                         <outlet property="doctorTableView" destination="sQ2-Cf-UyK" id="08e-g2-MjK"/>
+                        <segue destination="sh3-bm-H6t" kind="show" identifier="popUpVC" id="Y7r-LK-gkH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRt-Cx-AaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,7 +397,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xNB-HM-R5e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5U-Cl-Rcq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Storyboard1" automaticallyAdjustsScrollViewInsets="NO" id="I5U-Cl-Rcq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2IG-Og-dAj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -373,7 +421,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BLEU" width="225" height="225"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
