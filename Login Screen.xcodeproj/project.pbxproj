@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A81F80102811122D005150BF /* HealthConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F800F2811122D005150BF /* HealthConcernViewController.swift */; };
 		A8A1D1B5281277CD0061175C /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1D1B4281277CD0061175C /* RoundedView.swift */; };
 		A8A606BA2829474600599BA8 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606B92829474600599BA8 /* PopUpWindow.swift */; };
 		A8A606BC282948C100599BA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BB282948C100599BA8 /* Extensions.swift */; };
-		A8A606BE28294DA100599BA8 /* DoctorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BD28294DA100599BA8 /* DoctorTableView.swift */; };
 		A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */; };
 		A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7504280E8F13001C1F40 /* Concerns.swift */; };
 		A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */; };
@@ -51,11 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A81F800F2811122D005150BF /* HealthConcernViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthConcernViewController.swift; sourceTree = "<group>"; };
 		A8A1D1B4281277CD0061175C /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		A8A606B92829474600599BA8 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 		A8A606BB282948C100599BA8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A8A606BD28294DA100599BA8 /* DoctorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableView.swift; sourceTree = "<group>"; };
 		A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8AC7504280E8F13001C1F40 /* Concerns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerns.swift; sourceTree = "<group>"; };
 		A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -106,11 +102,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A8A1D1B628128CCC0061175C /* New Group */ = {
+		A8D504D72833769C00CC7E9C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
+				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
+				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
 			);
-			path = "New Group";
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A8D504D8283376BE00CC7E9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8DAAA712803FFFC00440CA3 /* Main.storyboard */,
+				A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */,
+				A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */,
+				A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */,
+				A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */,
+				A8A606B92829474600599BA8 /* PopUpWindow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8D504D9283376FB00CC7E9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */,
+				A8E71798282286760095BFF2 /* Doctors.swift */,
+				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8D504DA2833772600CC7E9C /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
+				A8A606BB282948C100599BA8 /* Extensions.swift */,
+				A8D4D62B2806D76800AD9C20 /* String+Extension.swift */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		A8DAAA5F2803FFFC00440CA3 = {
@@ -137,28 +169,14 @@
 			isa = PBXGroup;
 			children = (
 				A8DAAA6B2803FFFC00440CA3 /* AppDelegate.swift */,
-				A8A1D1B628128CCC0061175C /* New Group */,
 				A8DAAA6D2803FFFC00440CA3 /* SceneDelegate.swift */,
-				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
-				A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */,
-				A8DAAA712803FFFC00440CA3 /* Main.storyboard */,
-				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
-				A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */,
-				A8A606B92829474600599BA8 /* PopUpWindow.swift */,
-				A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */,
-				A8A606BD28294DA100599BA8 /* DoctorTableView.swift */,
-				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
-				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
-				A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */,
-				A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */,
-				A81F800F2811122D005150BF /* HealthConcernViewController.swift */,
-				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
-				A8E71798282286760095BFF2 /* Doctors.swift */,
+				A8D504D9283376FB00CC7E9C /* Model */,
+				A8D504D8283376BE00CC7E9C /* View */,
+				A8D504D72833769C00CC7E9C /* Controllers */,
+				A8D504DA2833772600CC7E9C /* Supporting files */,
 				A8DAAA742803FFFD00440CA3 /* Assets.xcassets */,
 				A8DAAA762803FFFD00440CA3 /* LaunchScreen.storyboard */,
 				A8DAAA792803FFFD00440CA3 /* Info.plist */,
-				A8D4D62B2806D76800AD9C20 /* String+Extension.swift */,
-				A8A606BB282948C100599BA8 /* Extensions.swift */,
 			);
 			path = "Login Screen";
 			sourceTree = "<group>";
@@ -313,8 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8A606BE28294DA100599BA8 /* DoctorTableView.swift in Sources */,
-				A81F80102811122D005150BF /* HealthConcernViewController.swift in Sources */,
 				A8D2840B28115A4F006FA34D /* MenuViewController.swift in Sources */,
 				A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */,
 				A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */,

@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let pwd = "Aq9@)!(@21"
         let x = pwd.isValidPassword()
         print("is true--- ?\(x)")
-       
+        
         
     }
     
@@ -55,8 +55,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -71,9 +69,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-  
-    
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         
@@ -83,8 +78,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        var mail = userNameTxtField.text!
-        var pwd = passwordTxtField.text!
+        let mail = userNameTxtField.text!
+        let pwd = passwordTxtField.text!
         
         if textField == self.userNameTxtField{
             isEmailValid = mail.isValidEmail
@@ -106,21 +101,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("PASSWORD NOT VALID")
                 
                 self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
-                //                     let alertContoller2 = UIAlertController (title: "Password not valid" , message: "Please enter a password containing atleast 8 characters, one capital letter, one lower case letter, one digit and one special character ", preferredStyle: .alert)
-                //                     alertContoller2.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-                //                     present(alertContoller2, animated: true, completion: nil)
+                
             } else {
                 self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
             }
         }
-        
-        
-        
-   //     self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
-    
-        
-        
-        
         
     }
     
@@ -130,39 +115,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //    self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
         
-     let loginSuccess = networkManager.callAPI(userCompletionHandler: { status in
+        networkManager.callAPI(userCompletionHandler: { status in
             if status{
                 
-              //  print("HI")
+                //  print("HI")
                 DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "next" , sender: self)
+                    self.performSegue(withIdentifier: "next" , sender: self)
                 }
             }
             else{
                 
                 DispatchQueue.main.async{
                     self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
-                let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
-                alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-                self.present(alertContoller, animated: true, completion: nil)
+                    let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
+                    alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+                    self.present(alertContoller, animated: true, completion: nil)
                 }
             }
         })
         
-      
-        
-        
-        //        if let email = userNameTxtField.text, let password = passwordTxtField.text{
-        //            if email == "vidyakesarla@iexceed.com" && password == "Appzillon@123"{
-        //                self.performSegue(withIdentifier: "next" , sender: self)
-        //        }
-        //            else{
-        //                print("aa")
-        //                let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
-        //                alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-        //                present(alertContoller, animated: true, completion: nil)
-        //            }
-        //        }
     }
     
 }

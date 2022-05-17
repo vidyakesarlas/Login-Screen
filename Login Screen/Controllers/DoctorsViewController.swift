@@ -511,7 +511,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         return cell
     }
 
-    func adaptivePresentationStyle(controller: UIPresentationController) -> UIModalPresentationStyle {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
     
