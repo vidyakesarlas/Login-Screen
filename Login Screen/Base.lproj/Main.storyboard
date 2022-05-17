@@ -165,10 +165,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nad-CA-Wsq" userLabel="blueView">
-                                <rect key="frame" x="-52" y="0.0" width="201" height="103"/>
+                                <rect key="frame" x="-52" y="0.0" width="201" height="65"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="103" id="ncA-l7-o8j"/>
+                                    <constraint firstAttribute="height" constant="65" id="ncA-l7-o8j"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -313,40 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsX-Sv-FkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4317" y="84"/>
-        </scene>
-        <!--Dest View Controller-->
-        <scene sceneID="b0i-59-LR1">
-            <objects>
-                <viewController id="gEy-kr-ms2" customClass="DestViewController" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yQB-Pz-wWp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOH-wK-ShQ">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oy3-rZ-5cx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="DOH-wK-ShQ" firstAttribute="centerY" secondItem="yQB-Pz-wWp" secondAttribute="centerY" id="4GW-va-bLf"/>
-                            <constraint firstItem="DOH-wK-ShQ" firstAttribute="centerX" secondItem="yQB-Pz-wWp" secondAttribute="centerX" id="dxW-VP-lpi"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="s2Q-xb-JUQ">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="o3g-e1-7UB"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="labl" destination="DOH-wK-ShQ" id="Qi6-LS-cIs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2H3-od-0m6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2623" y="776"/>
+            <point key="canvasLocation" x="3580" y="84"/>
         </scene>
         <!--Doctors View Controller-->
         <scene sceneID="uZW-Tc-xrB">

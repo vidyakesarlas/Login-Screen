@@ -16,7 +16,8 @@ class Doctors{
     var designation: String = ""
     var address: String = ""
     var fees: String = ""
-    
+    var appmtBooked: Bool = false
+    //bool
     
     init(image: String, name: String, yrs: String, designation: String, address: String, fees: String){
         self.image = image

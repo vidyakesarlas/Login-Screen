@@ -13,7 +13,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     var city: String?
-
+    
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     var y: String?
@@ -54,7 +54,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     let locationMan = CLLocationManager()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +79,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         menuCollectionView.layer.cornerRadius = 1.0
         menuCollectionView.layer.masksToBounds = true
-     //   contentView.layer.cornerRadius = 5.0
+        //   contentView.layer.cornerRadius = 5.0
         
         menuCollectionView.setCollectionViewLayout(layout, animated: true)
         
@@ -88,21 +88,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         // Do any additional setup after loading the view.
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        navigationItem.title = nil
-    //        if segue.identifier == "pizza"{
-    //            let vc = segue.destinationViewController as UIViewController
-    //            vc.navigationItem.title = "View Controller Pizza"
-    //            navigationItem.title = "Pizza to One"
-    //        }
-    //        if segue.identifier == "pasta"{
-    //            let vc = segue.destinationViewController as UIViewController
-    //            vc.navigationItem.title = "View Controller Linguine all’arrabbiata"
-    //            navigationItem.title = "Pasta to One"
-    //        }
-    //    }
-    //
+
     
     @IBAction func locationName(_ sender: Any) {
         
@@ -184,31 +170,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         destinationVC.navigationItem.title = y
     }
     
-    
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //
-    //        let inset: CGFloat = 10
-    //
-    //       return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    //
-    //
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        return CGSize(width: UIScreen.main.bounds.width, height: 80)
-    //    }
-    
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-    //         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-    //         let size:CGFloat = (menuCollectionView.frame.size.width - space) / 2.0
-    //         return CGSize(width: size, height: size)
-    //     }
-    //
-    
-    
+ 
     
     /*
      // MARK: - Navigation
@@ -235,37 +197,20 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
             else if let placemark = placemark?.first {
                 // you should always update your UI in the main thread
                 DispatchQueue.main.async {
-                    //  update UI here
-                    //                    print("name:", placemark.name ?? "unknown")
-                    //
-                    //                    print("address1:", placemark.thoroughfare ?? "unknown")
-                    //                    print("address2:", placemark.subThoroughfare ?? "unknown")
-                    //                    print("neighborhood:", placemark.subLocality ?? "unknown")
+
                     print("city:", placemark.locality ?? "unknown")
                     
-                    self.cityName.title = "location: \(placemark.locality!)"
+                    self.cityName.title = "\(placemark.locality!)"
+                    self.cityName.isEnabled = false
                     
-                    //                    print("state:", placemark.administrativeArea ?? "unknown")
-                    //                    print("subAdministrativeArea:", placemark.subAdministrativeArea ?? "unknown")
-                    //                    print("zip code:", placemark.postalCode ?? "unknown")
-                    //                    print("country:", placemark.country ?? "unknown", terminator: "\n\n")
-                    //
-                    //                    print("isoCountryCode:", placemark.isoCountryCode ?? "unknown")
-                    //                    print("region identifier:", placemark.region?.identifier ?? "unknown")
-                    //
-                    //                    print("timezone:", placemark.timeZone ?? "unknown", terminator:"\n\n")
-                    
-                    // Mailind Address
-                    //  print(placemark.mailingAddress ?? "unknown")
-                
+                }
             }
-        }
         })
     }
 }
 
 
-    
+
 
 
 extension CLLocation{
@@ -294,11 +239,11 @@ extension MenuViewController: CLLocationManagerDelegate{
         if let location = locations.last{
             
             locationMan.stopUpdatingLocation()
-           let  lat = location.coordinate.latitude
-           let long = location.coordinate.longitude
+            let  lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
             print("Latitude:::: +\(lat)")
             print("Longitude:::: +\(long)")
-           
+            
             newOne(lati: lat, longi: long)
         }
         

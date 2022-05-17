@@ -33,6 +33,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.passwordTxtField.layer.borderWidth = 2
         self.userNameTxtField.layer.borderColor = UIColor.gray.cgColor
         self.passwordTxtField.layer.backgroundColor = UIColor.gray.cgColor
+        
+        let pwd = "Aq9@)!(@21"
+        let x = pwd.isValidPassword()
+        print("is true--- ?\(x)")
+       
+        
     }
     
     //MARK: Textfield delegate methods
@@ -65,8 +71,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+  
+    
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        
         return true;
     }
     
@@ -90,9 +100,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         if textField == self.passwordTxtField {
-            isPasswordValid = pwd.isValidPassword
+            isPasswordValid = pwd.isValidPassword()
             
-            if !isPasswordValid{
+            if isPasswordValid == false{
+                print("PASSWORD NOT VALID")
+                
                 self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
                 //                     let alertContoller2 = UIAlertController (title: "Password not valid" , message: "Please enter a password containing atleast 8 characters, one capital letter, one lower case letter, one digit and one special character ", preferredStyle: .alert)
                 //                     alertContoller2.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
@@ -102,12 +114,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        
+        
+   //     self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
+    
+        
+        
+        
+        
     }
+    
+    
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
+        //    self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
+        
      let loginSuccess = networkManager.callAPI(userCompletionHandler: { status in
             if status{
+                
               //  print("HI")
                 DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "next" , sender: self)
@@ -116,6 +141,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             else{
                 
                 DispatchQueue.main.async{
+                    self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
                 let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
                 alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
                 self.present(alertContoller, animated: true, completion: nil)

@@ -7,23 +7,28 @@
 
 import Foundation
 
-//
-//  PopUpWindow.swift
-//  PopUpWindowExample
-//
-//  Created by John Codeos on 1/18/20.
-//  Copyright © 2020 John Codeos. All rights reserved.
-//
 
 import Foundation
 import UIKit
 
 
+typealias ButtonPressedHandler = () -> Void
 
+protocol PopUpWindowManager: AnyObject{
+
+    func okButtonPressed(index: Int)
+
+}
 
 class PopUpWindow: UIViewController {
-
+  
+    var cellIndex: Int = 0
+   
+    weak var delegate: PopUpWindowManager?
     
+   var okSelect: Bool = false
+    
+    var onSave: ((_ data: String) -> ())?
     
     @IBOutlet weak var dateTF: UITextField!
     private let popUpWindowView = PopUpWindowView()
@@ -36,7 +41,7 @@ class PopUpWindow: UIViewController {
         popUpWindowView.popupTitle.text = title
         popUpWindowView.popupText.text = text
         popUpWindowView.popupButton.setTitle(buttontext, for: .normal)
-        popUpWindowView.popupButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        popUpWindowView.popupButton.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
         popUpWindowView.popupButton2.setTitle(button, for: .normal)
         popUpWindowView.popupButton2.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         view = popUpWindowView
@@ -51,20 +56,25 @@ class PopUpWindow: UIViewController {
         dateTF?.text = formatDate(date: Date())
         
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func okButtonPressed(){
+       
+        self.popUpWindowView.popupText.text = "APPOINTMENT BOOKED!"
+        
+        delegate?.okButtonPressed(index: cellIndex)
+
+          self.dismiss(animated: true, completion: nil)
+    
+    }
     
     @objc func dismissView(){
         self.dismiss(animated: true, completion: nil)
     }
-    
-//    override func viewDidLoad() {
-//
-//
-//    }
+
     @objc func dateChange(datePicker: UIDatePicker)
     {
         dateTF.text = formatDate(date: datePicker.date)
@@ -90,8 +100,8 @@ class PopUpWindow: UIViewController {
         
         print("Selected value \(selectedDate)")
     }
-
-
+    
+    
 }
 
 private class PopUpWindowView: UIView {
@@ -102,14 +112,14 @@ private class PopUpWindowView: UIView {
     let popupButton = UIButton(frame: CGRect.zero)
     let popupDate = UIDatePicker(frame: CGRect.zero)
     let popupButton2 = UIButton(frame: CGRect.zero)
-
+    
     let BorderWidth: CGFloat = 2.0
     
     init() {
         super.init(frame: CGRect.zero)
         // Semi-transparent background
         backgroundColor = UIColor.black.withAlphaComponent(0.3)
-      //  UIColor.colorFromHex("#BC214B")
+        //  UIColor.colorFromHex("#BC214B")
         // Popup Background
         popupView.layer.backgroundColor = UIColor.systemBlue.cgColor
         popupView.layer.borderWidth = BorderWidth
@@ -120,7 +130,7 @@ private class PopUpWindowView: UIView {
         
         // Popup Title
         popupTitle.textColor = UIColor.white
-      //  popupTitle.backgroundColor = UIColor.colorFromHex("#9E1C40")
+        //  popupTitle.backgroundColor = UIColor.colorFromHex("#9E1C40")
         popupTitle.layer.masksToBounds = true
         popupTitle.adjustsFontSizeToFitWidth = true
         popupTitle.clipsToBounds = true
@@ -136,55 +146,32 @@ private class PopUpWindowView: UIView {
         
         // Popup Button
         popupButton.setTitleColor(UIColor.white, for: .normal)
-        popupButton.titleLabel?.font = UIFont.systemFont(ofSize: 23.0, weight: .bold)
-        popupButton.layer.borderColor = UIColor.white.cgColor
-        popupButton.layer.borderWidth = 1
-       // popupButton.backgroundColor = UIColor.colorFromHex("#9E1C40")
-        
-        
-        
+
         //Popup button 2
         popupButton2.setTitleColor(UIColor.white, for: .normal)
         popupButton2.titleLabel?.font = UIFont.systemFont(ofSize: 23.0, weight: .bold)
-        popupButton2.layer.borderColor = UIColor.white.cgColor
-        popupButton2.layer.borderWidth = 1
-        
+
         //Popup datepicker
         
-    //    popupDate.layer.backgroundColor = UIColor.red
+        //    popupDate.layer.backgroundColor = UIColor.red
         popupDate.minimumDate = Date()
         
         popupDate.frame = CGRect(x: 10, y: 50, width: self.popupView.frame.width, height: 200)
-               
-               // Set some of UIDatePicker properties
+        
+        // Set some of UIDatePicker properties
         popupDate.timeZone = NSTimeZone.local
-        
-//        popupDate.textColor = UIColor.colorFromHex("15F4EE")
-//        popupDate.tintColor = UIColor.white
-//
-               // Add an event to call onDidChangeDate function when value is changed.
-     //   popupDate.addTarget(self, action: #selector(PopUpWindow.datePickerValueChanged(_:)), for: .valueChanged)
-//
-//        popupDate.setValue(UIColor.white, forKey: "textColor")
-//        popupDate.setValue(false, forKey: "highlightsToday")
-          
-        
-//        popupDate.setValue(UIColor.white, forKey: "textColor")
-//              popupDate.setValue(false, forKey: "highlightsToday")
+    
         
         popupDate.overrideUserInterfaceStyle = .dark
         
-               // Add DataPicker to the view
-               self.popupView.addSubview(popupDate)
-               
-
-        
+        // Add DataPicker to the view
+        self.popupView.addSubview(popupDate)
         
         popupView.addSubview(popupTitle)
         popupView.addSubview(popupText)
         popupView.addSubview(popupButton)
         popupView.addSubview(popupButton2)
-       
+        
         
         // Add the popupView(box) in the PopUpWindowView (semi-transparent background)
         addSubview(popupView)
@@ -193,11 +180,11 @@ private class PopUpWindowView: UIView {
         // PopupView constraints
         popupView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-//            popupView.heightAnchor.constraint(equalToConstant: 500),
+            //            popupView.heightAnchor.constraint(equalToConstant: 500),
             popupView.widthAnchor.constraint(equalToConstant: 293),
             popupView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             popupView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-            ])
+        ])
         
         // PopupTitle constraints
         popupTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -206,7 +193,7 @@ private class PopUpWindowView: UIView {
             popupTitle.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth),
             popupTitle.topAnchor.constraint(equalTo: popupView.topAnchor, constant: BorderWidth),
             popupTitle.heightAnchor.constraint(equalToConstant: 55)
-            ])
+        ])
         
         
         // PopupText constraints
@@ -217,8 +204,8 @@ private class PopUpWindowView: UIView {
             popupText.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 15),
             popupText.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -15),
             popupText.bottomAnchor.constraint(equalTo: popupButton.topAnchor, constant: -40)
-            ])
-
+        ])
+        
         
         // PopupButton constraints
         popupButton.translatesAutoresizingMaskIntoConstraints = false
@@ -227,16 +214,16 @@ private class PopUpWindowView: UIView {
             popupButton.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: BorderWidth -  110),
             popupButton.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth),
             popupButton.bottomAnchor.constraint(equalTo: popupView.bottomAnchor, constant: -BorderWidth - 20)
-            ])
+        ])
         
         //popupbutton2 constraints
         popupButton2.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             popupButton2.heightAnchor.constraint(equalToConstant: 44),
-            popupButton2.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: BorderWidth),
-            popupButton2.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth + 80),
+            popupButton2.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: BorderWidth + 140),
+            popupButton2.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth),
             popupButton2.bottomAnchor.constraint(equalTo: popupView.bottomAnchor, constant: -BorderWidth - 20)
-            ])
+        ])
         
         
         
@@ -247,8 +234,7 @@ private class PopUpWindowView: UIView {
             popupDate.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth - 38),
             popupDate.topAnchor.constraint(equalTo: popupView.topAnchor, constant: BorderWidth + 60),
             popupDate.heightAnchor.constraint(equalToConstant: 55)
-            ])
-        
+        ])
         
     }
     
@@ -256,19 +242,6 @@ private class PopUpWindowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-  
+    
     
 }
-
-//extension UIDatePicker {
-//
-//var textColor: UIColor? {
-//    set {
-//        setValue(newValue, forKeyPath: "textColor")
-//    }
-//    get {
-//        return value(forKeyPath: "textColor") as? UIColor
-//    }
-//  }
-//}
-//

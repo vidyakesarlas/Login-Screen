@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A81F80102811122D005150BF /* HealthConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F800F2811122D005150BF /* HealthConcernViewController.swift */; };
 		A8A1D1B5281277CD0061175C /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1D1B4281277CD0061175C /* RoundedView.swift */; };
-		A8A606B828291EDE00599BA8 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606B728291EDE00599BA8 /* PopupViewController.swift */; };
 		A8A606BA2829474600599BA8 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606B92829474600599BA8 /* PopUpWindow.swift */; };
 		A8A606BC282948C100599BA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BB282948C100599BA8 /* Extensions.swift */; };
 		A8A606BE28294DA100599BA8 /* DoctorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BD28294DA100599BA8 /* DoctorTableView.swift */; };
@@ -28,7 +27,6 @@
 		A8DAAA832803FFFD00440CA3 /* Login_ScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA822803FFFD00440CA3 /* Login_ScreenTests.swift */; };
 		A8DAAA8D2803FFFD00440CA3 /* Login_ScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA8C2803FFFD00440CA3 /* Login_ScreenUITests.swift */; };
 		A8DAAA8F2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA8E2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift */; };
-		A8E71791281FB1310095BFF2 /* DestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71790281FB1310095BFF2 /* DestViewController.swift */; };
 		A8E71794282250F80095BFF2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */; };
 		A8E71795282250F80095BFF2 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */; };
 		A8E71797282252C10095BFF2 /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E71796282252C10095BFF2 /* DoctorsViewController.swift */; };
@@ -55,7 +53,6 @@
 /* Begin PBXFileReference section */
 		A81F800F2811122D005150BF /* HealthConcernViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthConcernViewController.swift; sourceTree = "<group>"; };
 		A8A1D1B4281277CD0061175C /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		A8A606B728291EDE00599BA8 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		A8A606B92829474600599BA8 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 		A8A606BB282948C100599BA8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A8A606BD28294DA100599BA8 /* DoctorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableView.swift; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 		A8DAAA882803FFFD00440CA3 /* Login ScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Login ScreenUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DAAA8C2803FFFD00440CA3 /* Login_ScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ScreenUITests.swift; sourceTree = "<group>"; };
 		A8DAAA8E2803FFFD00440CA3 /* Login_ScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A8E71790281FB1310095BFF2 /* DestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestViewController.swift; sourceTree = "<group>"; };
 		A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		A8E71796282252C10095BFF2 /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
@@ -146,13 +142,11 @@
 				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
 				A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */,
 				A8DAAA712803FFFC00440CA3 /* Main.storyboard */,
-				A8A606B728291EDE00599BA8 /* PopupViewController.swift */,
 				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
 				A8E71792282250F80095BFF2 /* CustomTableViewCell.swift */,
 				A8A606B92829474600599BA8 /* PopUpWindow.swift */,
 				A8E71793282250F80095BFF2 /* CustomTableViewCell.xib */,
 				A8A606BD28294DA100599BA8 /* DoctorTableView.swift */,
-				A8E71790281FB1310095BFF2 /* DestViewController.swift */,
 				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
 				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
 				A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */,
@@ -324,8 +318,6 @@
 				A8D2840B28115A4F006FA34D /* MenuViewController.swift in Sources */,
 				A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */,
 				A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */,
-				A8E71791281FB1310095BFF2 /* DestViewController.swift in Sources */,
-				A8A606B828291EDE00599BA8 /* PopupViewController.swift in Sources */,
 				A8D4D62C2806D76800AD9C20 /* String+Extension.swift in Sources */,
 				A8E71799282286760095BFF2 /* Doctors.swift in Sources */,
 				A8A606BA2829474600599BA8 /* PopUpWindow.swift in Sources */,
