@@ -12,8 +12,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         cellView.layer.cornerRadius = 8.0

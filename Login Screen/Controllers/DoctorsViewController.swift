@@ -13,10 +13,18 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     var docType: String?
     var okSelected: Bool = false
     var popUpWindow: PopUpWindow!
+    static var datePicked:  String = ""
+    static var timePciked: String = ""
     
     
     func okButtonPressed(index: Int) {
-       
+
+        popUpWindow.dismissView()
+    
+        let alertContoller = UIAlertController (title: "Appointment booked!" , message: "You've booked an appointment for the date \(DoctorsViewController.datePicked) and time \(DoctorsViewController.timePciked) hours", preferredStyle: .alert)
+        alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+        self.present(alertContoller, animated: true, completion: nil)
+        
         switch docType {
             
         case "Dental Care":
@@ -93,7 +101,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         
         let date = UIDatePicker()
    
-        popUpWindow = PopUpWindow(title: "Select date", text: "Choose a date convenient for you", buttontext: "OK", datePicker: date, button: "Cancel")
+        popUpWindow = PopUpWindow(title: "Select date", text: "Choose a date and time convenient for you", buttontext: "OK", datePicker: date, button: "Cancel")
         
         popUpWindow.delegate = self
         
@@ -280,13 +288,17 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         super.viewDidLoad()
         
         doctorTableView.rowHeight = 280
- 
+        
+        doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
+        
         doctorTableView.estimatedRowHeight = UITableView.automaticDimension
         
         let nibCell = UINib(nibName: "CustomTableViewCell", bundle: nil)
         doctorTableView.register(nibCell, forCellReuseIdentifier: "doctorCell")
         
         doctorTableView.dataSource = self
+        
+        doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
 
     }
 
@@ -301,7 +313,11 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         return 1
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+//        if #available(iOS 11.0, *) {
+//             self.additionalSafeAreaInsets.top = 20
+//        }
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -325,10 +341,12 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             
             if dentist.appmtBooked == true{
+                //   cell.bookAppointmentt.titleLabel?.textColor = .white
+   //                cell.bookAppointmentt.backgroundColor = UIColor.colorFromHex("#89CFF0")
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
-
-                
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
         case "Skin & Hair":
@@ -343,8 +361,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if dermatologist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
-
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
                 
             }
 
@@ -359,8 +378,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if digestive.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
-
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
                 
             }
 
@@ -376,7 +396,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if ent.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
 
             
@@ -393,7 +415,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
 
             if eye.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
             
@@ -409,7 +433,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if childSpecialist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
         case "Women's Health":
@@ -424,7 +450,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if gynaecologist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
 
         case "Homeopathy":
@@ -439,7 +467,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if homeopathist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
             
@@ -455,7 +485,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if orthopaedecian.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
 
         case "Mental Wellness":
@@ -470,7 +502,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if pshychiatrist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
         case "Sex Specialist":
@@ -485,7 +519,9 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             cell.cellIndex = indexPath.row
             if sexSpecialist.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
             }
             
         case "General Physician":
@@ -501,7 +537,10 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
           
             if physician.appmtBooked == true{
                 cell.bookAppointmentt.setTitle("Appointment booked!", for: .normal)
-                cell.bookAppointmentt.backgroundColor = .white
+                cell.bookAppointmentt.setTitleColor(.white, for: .normal)
+                cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
+                cell.isUserInteractionEnabled = false
+               // cell.bookAppointmentt.textColor = .white
             }
  
         default:

@@ -8,7 +8,6 @@
 import Foundation
 
 class Concerns{
-    
     var image: String = ""
     var name: String = ""
     
@@ -16,6 +15,5 @@ class Concerns{
         self.image = image
         self.name = name
     }
-    
-    
 }
+

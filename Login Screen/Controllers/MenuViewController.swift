@@ -9,12 +9,8 @@ import UIKit
 import CoreLocation
 
 class MenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    
-    
-    
+
     var city: String?
-    
-    
     @IBOutlet weak var menuCollectionView: UICollectionView!
     var y: String?
     let menuID = "MenuCollectionViewCell"
@@ -62,7 +58,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationMan.delegate = self
         locationMan.requestWhenInUseAuthorization()
         locationMan.requestLocation()
-        
+
         self.navigationController?.isNavigationBarHidden = false
         
         
@@ -254,6 +250,12 @@ extension MenuViewController: CLLocationManagerDelegate{
     }
     
     
+}
+
+extension UINavigationBar {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 75)
+    }
 }
 
 
