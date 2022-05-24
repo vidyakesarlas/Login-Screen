@@ -16,6 +16,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     static var datePicked:  String = ""
     static var timePciked: String = ""
     
+    static var datePick: Date = Date()
     
     func okButtonPressed(index: Int) {
 
@@ -347,6 +348,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                dentist.notifCall(titleSent: "Your appointment with \(dentist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
         case "Skin & Hair":
@@ -364,6 +366,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                dermatologist.notifCall(titleSent: "Hey there! Your appointment with \(dermatologist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
                 
             }
 
@@ -381,6 +384,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                digestive.notifCall(titleSent: "Hey there! Your appointment with \(digestive.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
                 
             }
 
@@ -399,6 +403,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                ent.notifCall(titleSent: "Hey there! Your appointment with \(ent.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
 
             
@@ -418,6 +423,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                eye.notifCall(titleSent: "Hey there! Your appointment with \(eye.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
             
@@ -436,6 +442,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                childSpecialist.notifCall(titleSent: "Hey there! Your appointment with \(childSpecialist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
         case "Women's Health":
@@ -453,6 +460,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                gynaecologist.notifCall(titleSent: "Hey there! Your appointment with \(gynaecologist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
 
         case "Homeopathy":
@@ -470,6 +478,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                homeopathist.notifCall(titleSent: "Hey there! Your appointment with \(homeopathist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
             
@@ -488,6 +497,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                orthopaedecian.notifCall(titleSent: "Hey there! Your appointment with \(orthopaedecian.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
 
         case "Mental Wellness":
@@ -505,6 +515,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                pshychiatrist.notifCall(titleSent: "Hey there! Your appointment with \(pshychiatrist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
         case "Sex Specialist":
@@ -522,6 +533,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.setTitleColor(.white, for: .normal)
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
+                sexSpecialist.notifCall(titleSent: "Hey there! Your appointment with \(sexSpecialist.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
             
         case "General Physician":
@@ -541,6 +553,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 cell.bookAppointmentt.backgroundColor = UIColor.systemBlue
                 cell.isUserInteractionEnabled = false
                // cell.bookAppointmentt.textColor = .white
+                physician.notifCall(titleSent: "Hey there! Your appointment with \(physician.name) is in few mins", bodySent: "Hope you're in the hospital", dateBooked: DoctorsViewController.datePick)
             }
  
         default:

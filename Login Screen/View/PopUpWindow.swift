@@ -83,13 +83,16 @@ class PopUpWindow: UIViewController {
         let hour = calendar.component(.hour, from: popUpWindowView.popupDate.date)
         let minutes = calendar.component(.minute, from: popUpWindowView.popupDate.date)
         
-        var dateStr = formatDate(date: popUpWindowView.popupDate.date)
-        var timeStr = (String(format: "%0.2d:%0.2d",hour,minutes))
+        let dateStr = formatDate(date: popUpWindowView.popupDate.date)
+        
+        let timeStr = (String(format: "%0.2d:%0.2d",hour,minutes))
         
         print(hour)
         print(minutes)
 
         DoctorsViewController.datePicked = dateStr
+        
+        DoctorsViewController.datePick = popUpWindowView.popupDate.date
         
         DoctorsViewController.timePciked = timeStr
         
@@ -198,17 +201,17 @@ private class PopUpWindowView: UIView {
         popupView.layer.cornerRadius = 8.0
         popupView.layer.masksToBounds = true
         
-        let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.popupView.frame.width, height: 240))
-           inputView.addSubview(popupDate) // add date picker to UIView
-        let doneButton = UIButton(frame: CGRect(x: (self.popupView.frame.size.width + 90), y: 160, width: 100, height: 50))
-        doneButton.setTitle("Done", for: .normal)
-        doneButton.setTitle("Done", for: .highlighted)
-        doneButton.setTitleColor(UIColor.white, for: .normal)
-        doneButton.setTitleColor(UIColor.gray, for: .highlighted)
-
-           inputView.addSubview(doneButton) // add Button to UIView
-
-        doneButton.addTarget(self, action: #selector(doneButton(sender:)), for: .touchUpInside)
+//        let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.popupView.frame.width, height: 240))
+//           inputView.addSubview(popupDate) // add date picker to UIView
+//        let doneButton = UIButton(frame: CGRect(x: (self.popupView.frame.size.width + 90), y: 160, width: 100, height: 50))
+//        doneButton.setTitle("Done", for: .normal)
+//        doneButton.setTitle("Done", for: .highlighted)
+//        doneButton.setTitleColor(UIColor.white, for: .normal)
+//        doneButton.setTitleColor(UIColor.gray, for: .highlighted)
+//
+//           inputView.addSubview(doneButton) // add Button to UIView
+//
+//        doneButton.addTarget(self, action: #selector(doneButton(sender:)), for: .touchUpInside)
         // set button click event
 
 //           popupView.inputView = inputView
@@ -266,7 +269,7 @@ private class PopUpWindowView: UIView {
         // Add DataPicker to the view
       self.popupView.addSubview(popupDate)
         
-        popupView.addSubview(inputView)
+      //  popupView.addSubview(inputView)
         popupView.addSubview(popupTitle)
         popupView.addSubview(popupText)
         popupView.addSubview(popupButton)
