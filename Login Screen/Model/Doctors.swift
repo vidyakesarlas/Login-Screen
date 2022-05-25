@@ -20,13 +20,17 @@ class Doctors{
     var appmtBooked: Bool = false
     
     init(image: String, name: String, yrs: String, designation: String, address: String, fees: String){
-        self.image = image
+        
+    self.image = image
         self.name = name
         self.yrs = yrs
         self.designation = designation
         self.address = address
         self.fees = fees
     }
+    
+    
+    
     
     
     func notifCall(titleSent: String, bodySent: String, dateBooked: Date){
@@ -42,12 +46,9 @@ class Doctors{
         content.body = bodySent
 
         //step 3: create notification trigger
-        let date = dateBooked.addingTimeInterval(5)
         
-        let minComp = Calendar.current.dateComponents([.minute], from: date)
+        let date = dateBooked.addingTimeInterval(7)
         
-        print(minComp)
-    
         let calendar = NSCalendar.autoupdatingCurrent
 
         let newDate = calendar.date(byAdding: .minute, value: -10, to: date) ?? date

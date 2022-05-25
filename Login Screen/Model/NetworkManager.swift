@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class NetworkManager {
     
     let url = URL(string: "https://jsonplaceholder.typicode.com/todos")

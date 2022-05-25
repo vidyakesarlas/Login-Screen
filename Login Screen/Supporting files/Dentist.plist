@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Harshitha</string>
+		<key>fees</key>
+		<string>Rs 600 ~ Consultation fees</string>
+		<key>address</key>
+		<string>Kormangala 5 block, Dental Clinic</string>
+		<key>designation</key>
+		<string>Dental Care</string>
+		<key>yrs</key>
+		<string>10</string>
+		<key>image</key>
+		<string>Harshitha</string>
+	</dict>
+	<dict>
+		<key>yrs</key>
+		<string>14</string>
+		<key>designation</key>
+		<string>Dental Care</string>
+		<key>address</key>
+		<string>Kormangala 5 block, Dental Clinic</string>
+		<key>image</key>
+		<string>Jaya</string>
+		<key>name</key>
+		<string>Jaya</string>
+		<key>fees</key>
+		<string>Rs 650 ~ Consultation fees</string>
+	</dict>
+</array>
+</plist>
