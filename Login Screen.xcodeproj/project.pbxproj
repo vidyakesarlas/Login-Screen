@@ -14,6 +14,7 @@
 		A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7504280E8F13001C1F40 /* Concerns.swift */; };
 		A8D0BF50283DEE8100C6F19C /* Dentist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D0BF4F283DEE8100C6F19C /* Dentist.plist */; };
 		A8D0BF60283E2BF200C6F19C /* DoctorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */; };
+		A8D0BF62283E3BE700C6F19C /* Skin & Hair.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */; };
 		A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */; };
 		A8D284092811593B006FA34D /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */; };
 		A8D2840B28115A4F006FA34D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2840A28115A4F006FA34D /* MenuViewController.swift */; };
@@ -58,6 +59,7 @@
 		A8AC7504280E8F13001C1F40 /* Concerns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerns.swift; sourceTree = "<group>"; };
 		A8D0BF4F283DEE8100C6F19C /* Dentist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Dentist.plist; sourceTree = "<group>"; };
 		A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorManager.swift; sourceTree = "<group>"; };
+		A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Skin & Hair.plist"; sourceTree = "<group>"; };
 		A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8D2840A28115A4F006FA34D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
+				A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */,
 				A8D0BF4F283DEE8100C6F19C /* Dentist.plist */,
 				A8A606BB282948C100599BA8 /* Extensions.swift */,
 				A8D4D62B2806D76800AD9C20 /* String+Extension.swift */,
@@ -313,6 +316,7 @@
 				A8DAAA732803FFFC00440CA3 /* Main.storyboard in Resources */,
 				A8E71795282250F80095BFF2 /* CustomTableViewCell.xib in Resources */,
 				A8D0BF50283DEE8100C6F19C /* Dentist.plist in Resources */,
+				A8D0BF62283E3BE700C6F19C /* Skin & Hair.plist in Resources */,
 				A8D284092811593B006FA34D /* MenuCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

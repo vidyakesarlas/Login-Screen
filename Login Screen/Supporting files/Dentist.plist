@@ -30,5 +30,105 @@
 		<key>fees</key>
 		<string>Rs 650 ~ Consultation fees</string>
 	</dict>
+    <dict>
+        <key>name</key>
+        <string>Yashaswini</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Yashaswini</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Yashaswini</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Yashaswini</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Vidya</string>
+        <key>fees</key>
+        <string>Rs 750 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Vidya</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Kshema</string>
+        <key>fees</key>
+        <string>Rs 800 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>7</string>
+        <key>image</key>
+        <string>Kshema</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Sunidhi</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>5</string>
+        <key>image</key>
+        <string>Sunidhi</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Lakshmi</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>5</string>
+        <key>image</key>
+        <string>Lakshmi</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Sushma</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Kormangala 5 block, Dental Clinic</string>
+        <key>designation</key>
+        <string>Dental Care</string>
+        <key>yrs</key>
+        <string>5</string>
+        <key>image</key>
+        <string>Sushma</string>
+    </dict>
+    
+    
 </array>
 </plist>
