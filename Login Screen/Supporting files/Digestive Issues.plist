@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <array>
+    <dict>
+        <key>name</key>
+        <string>Varshitha</string>
+        <key>fees</key>
+        <string>Rs 500 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Varshitha</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Ramya</string>
+        <key>fees</key>
+        <string>Rs 600 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Ramya</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Mohan</string>
+        <key>fees</key>
+        <string>Rs 700 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Mohan</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Sundaran</string>
+        <key>fees</key>
+        <string>Rs 600 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Sundaran</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Vivek</string>
+        <key>fees</key>
+        <string>Rs 400 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Vivek</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Srikanth</string>
+        <key>fees</key>
+        <string>Rs 800 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Srikanth</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Srushty</string>
+        <key>fees</key>
+        <string>Rs 500 ~ Consultation fees</string>
+        <key>address</key>
+        <string>Near Indiranagar KFC, Vikas Clinic</string>
+        <key>designation</key>
+        <string>Digestive issues</string>
+        <key>yrs</key>
+        <string>6</string>
+        <key>image</key>
+        <string>Srushty</string>
+    </dict>
+</array>
+</plist>

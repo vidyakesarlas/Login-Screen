@@ -9,9 +9,9 @@ import Foundation
 
 class Concerns{
     var image: String = ""
-    var name: String = ""
+    var name: DoctorType = .none
     
-    init(image: String, name: String){
+    init(image: String, name: DoctorType){
         self.image = image
         self.name = name
     }

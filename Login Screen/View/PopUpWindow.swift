@@ -12,32 +12,23 @@ import Foundation
 import UIKit
 
 protocol PopUpWindowManager: AnyObject{
-
     func okButtonPressed(index: Int)
-
 }
 
 class PopUpWindow: UIViewController {
-  
     var cellIndex: Int = 0
-   
     weak var delegate: PopUpWindowManager?
-    
-   static var date: String = ""
-    
-   var okSelect: Bool = false
+    static var date: String = ""
+    var okSelect: Bool = false
     
     @IBOutlet weak var dateTF: UITextField!
     private let popUpWindowView = PopUpWindowView()
     private var myDatePicker: UIDatePicker?
     
     init(title: String, text: String, buttontext: String, datePicker: UIDatePicker, button: String) {
-        
         super.init(nibName: nil, bundle: nil)
-        
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overFullScreen
-        
         popUpWindowView.popupTitle.text = title
         popUpWindowView.popupText.text = text
         popUpWindowView.popupButton.setTitle(buttontext, for: .normal)
@@ -45,28 +36,14 @@ class PopUpWindow: UIViewController {
         popUpWindowView.popupButton2.setTitle(button, for: .normal)
         popUpWindowView.popupButton2.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         view = popUpWindowView
-        
         self.myDatePicker = datePicker
-        
-        
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
-        
-        
         datePicker.frame.size = CGSize(width: 0, height: 300)
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.maximumDate = Date()
-        
-        
         dateTF?.inputView = datePicker
         dateTF?.text = formatDate(date: Date())
-       // datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .allEditingEvents)
-        
-        
-     //   popUpWindowView.reloadInputViews()
-
-       
-        
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -74,45 +51,31 @@ class PopUpWindow: UIViewController {
     }
     
     @objc func okButtonPressed(){
-       
-        self.popUpWindowView.popupText.text = "APPOINTMENT BOOKED!"
         
+        self.popUpWindowView.popupText.text = "APPOINTMENT BOOKED!"
         print("date selected........:\(popUpWindowView.popupDate.date)")
-
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: popUpWindowView.popupDate.date)
         let minutes = calendar.component(.minute, from: popUpWindowView.popupDate.date)
-        
         let dateStr = formatDate(date: popUpWindowView.popupDate.date)
-        
         let timeStr = (String(format: "%0.2d:%0.2d",hour,minutes))
-        
         print(hour)
         print(minutes)
-
         DoctorsViewController.datePicked = dateStr
-        
         DoctorsViewController.datePick = popUpWindowView.popupDate.date
-        
         DoctorsViewController.timePciked = timeStr
-        
         delegate?.okButtonPressed(index: cellIndex)
-    
-          self.dismiss(animated: true, completion: nil)
-    
+        self.dismiss(animated: true, completion: nil)
+        
     }
-    
-    
-    
     
     @objc func dismissView(){
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @objc func dateChange(datePicker: UIDatePicker)
     {
         dateTF.text = formatDate(date: datePicker.date)
-       
     }
     
     func formatDate(date: Date) -> String
@@ -122,45 +85,31 @@ class PopUpWindow: UIViewController {
         return formatter.string(from: date)
     }
     
-  
-    
     @objc func datePickerValueChanged(_ sender: UIDatePicker){
-        
         // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
-        
         // Set date format
         dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
-        
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
-        
         print("Selected value \(selectedDate)")
-        
-       
-
-        
         presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
-       print("date pciked is:\(popUpWindowView.popupDate.date)")
+        print("date pciked is:\(popUpWindowView.popupDate.date)")
     }
-    
     
 }
 
 private class PopUpWindowView: UIView {
-    
     let popupView = UIView(frame: CGRect.zero)
     let popupTitle = UILabel(frame: CGRect.zero)
     let popupText = UILabel(frame: CGRect.zero)
     let popupButton = UIButton(frame: CGRect.zero)
     let popupDate = UIDatePicker(frame: CGRect.zero)
     let popupButton2 = UIButton(frame: CGRect.zero)
-    
     let BorderWidth: CGFloat = 2.0
-    
     @objc func doneButton(sender:UIButton)
     {
         popupDate.resignFirstResponder() // To resign the inputView on clicking done.
@@ -173,19 +122,13 @@ private class PopUpWindowView: UIView {
         return formatter.string(from: date)
     }
     
-//    @objc func handleDatePicker(sender: UIDatePicker) {
-//        var dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        popupDate = dateFormatter.stringFromDate(sender.date)
-//    }
-    
     func getTime(sender:UIDatePicker)
     {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.short
         let endDate = (sender.date).addingTimeInterval(TimeInterval(30.0 * 60.0))
         let time = dateFormatter.string(from: endDate)
-      //  print("\(time)”) //getting current time like 8:14 AM , expected should be 8:00 AM
+        //  print("\(time)”) //getting current time like 8:14 AM , expected should be 8:00 AM
     }
     
     init() {
@@ -200,24 +143,6 @@ private class PopUpWindowView: UIView {
         popupView.layer.borderColor = UIColor.systemBlue.cgColor
         popupView.layer.cornerRadius = 8.0
         popupView.layer.masksToBounds = true
-        
-//        let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.popupView.frame.width, height: 240))
-//           inputView.addSubview(popupDate) // add date picker to UIView
-//        let doneButton = UIButton(frame: CGRect(x: (self.popupView.frame.size.width + 90), y: 160, width: 100, height: 50))
-//        doneButton.setTitle("Done", for: .normal)
-//        doneButton.setTitle("Done", for: .highlighted)
-//        doneButton.setTitleColor(UIColor.white, for: .normal)
-//        doneButton.setTitleColor(UIColor.gray, for: .highlighted)
-//
-//           inputView.addSubview(doneButton) // add Button to UIView
-//
-//        doneButton.addTarget(self, action: #selector(doneButton(sender:)), for: .touchUpInside)
-        // set button click event
-
-//           popupView.inputView = inputView
-//        popupDate.addTarget(self, action: #selector(formatDate(date:)), for: .valueChanged)
-//
-//        var dat = formatDate(date: popupDate.date)
         
         // Popup Title
         popupTitle.textColor = UIColor.white
@@ -237,49 +162,29 @@ private class PopUpWindowView: UIView {
         
         // Popup Button
         popupButton.setTitleColor(UIColor.white, for: .normal)
-       // popupButton.backgroundColor = UIColor.green
-
+        // popupButton.backgroundColor = UIColor.green
+        
         //Popup button 2
         popupButton2.setTitleColor(UIColor.white, for: .normal)
         popupButton2.titleLabel?.font = UIFont.systemFont(ofSize: 23.0, weight: .bold)
-       // popupButton2.backgroundColor = UIColor.red
+        // popupButton2.backgroundColor = UIColor.red
         
-
         //Popup datepicker
-        
-        //    popupDate.layer.backgroundColor = UIColor.red
         popupDate.minimumDate = Date()
-        
         popupDate.frame = CGRect(x: 10, y: 50, width: self.popupView.frame.width, height: 200)
-        
         // Set some of UIDatePicker properties
         popupDate.timeZone = NSTimeZone.local
-    
-        
         popupDate.overrideUserInterfaceStyle = .dark
         
-        
-        
-//        print("datepcikerrrr: \(popupDate.da)")
-        
-//        PopUpWindow.date = formatDate(date: Date())
-        
-        
-        
         // Add DataPicker to the view
-      self.popupView.addSubview(popupDate)
-        
-      //  popupView.addSubview(inputView)
+        self.popupView.addSubview(popupDate)
         popupView.addSubview(popupTitle)
         popupView.addSubview(popupText)
         popupView.addSubview(popupButton)
         popupView.addSubview(popupButton2)
         
-        
         // Add the popupView(box) in the PopUpWindowView (semi-transparent background)
         addSubview(popupView)
-        
-        
         // PopupView constraints
         popupView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -298,7 +203,6 @@ private class PopUpWindowView: UIView {
             popupTitle.heightAnchor.constraint(equalToConstant: 55)
         ])
         
-        
         // PopupText constraints
         popupText.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -308,7 +212,6 @@ private class PopUpWindowView: UIView {
             popupText.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -15),
             popupText.bottomAnchor.constraint(equalTo: popupButton.topAnchor, constant: -40)
         ])
-        
         
         // PopupButton constraints
         popupButton.translatesAutoresizingMaskIntoConstraints = false
@@ -325,11 +228,9 @@ private class PopUpWindowView: UIView {
             popupButton2.heightAnchor.constraint(equalToConstant: 44),
             popupButton2.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 0),
             popupButton2.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -150),
-         
+            
             popupButton2.bottomAnchor.constraint(equalTo: popupView.bottomAnchor, constant: -BorderWidth - 20)
         ])
-        
-        
         
         //popupdate constraints
         popupDate.translatesAutoresizingMaskIntoConstraints = false

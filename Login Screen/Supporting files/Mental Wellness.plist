@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    
+    <array>
+        
+        <dict>
+            <key>name</key>
+            <string>John</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>Adugodi 5 block, BGS Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>John</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Nagarjuna</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>Adugodi 5 block, BGS Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Nagarjuna</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Abheetha</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>Adugodi 5 block, BGS Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Abheetha</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Raghav</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>Adugodi 5 block, BGS Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Raghav</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Spoorthy</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>KS Town, Nethralaya Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Spoorthy</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Shanti</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>KS Town, Nethralaya Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Shanti</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Reena</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>KS Town, Nethralaya Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Reena</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Arundati</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>KS Town, Nethralaya Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Arundati</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Sunidhi</string>
+            <key>fees</key>
+            <string>Rs 600 ~ Consultation fees</string>
+            <key>address</key>
+            <string>KS Town, Nethralaya Clinic</string>
+            <key>designation</key>
+            <string>Mental Wellness</string>
+            <key>yrs</key>
+            <string>6</string>
+            <key>image</key>
+            <string>Sunidhi</string>
+        </dict>
+        
+      
+        
+        </array>
+    
+</plist>

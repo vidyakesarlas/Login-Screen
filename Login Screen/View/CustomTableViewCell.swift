@@ -11,12 +11,11 @@ protocol MyTableViewCellDelegate: AnyObject{
     func didTapButton(with title: String, index: Int)
 }
 class CustomTableViewCell: UITableViewCell {
-
     var cellIndex: Int = 0
- 
     weak var delegate: MyTableViewCellDelegate?
- 
     var okSelected: Bool = false
+    var popup: PopUpWindow?
+    private var title: String = ""
     
     @IBOutlet weak var viewOne: UIView!
     @IBOutlet weak var designation: UILabel!
@@ -27,19 +26,12 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var fees: UILabel!
     @IBOutlet weak var viewtwo: UIView!
     @IBOutlet weak var bookAppointmentt: UIButton!
-  
-    var popup: PopUpWindow?
-
-    private var title: String = ""
-
+    
     @IBAction func didTapButton(){
-        
         delegate?.didTapButton(with: title, index: cellIndex)
-        
     }
-
+    
     override func awakeFromNib() {
-        
         super.awakeFromNib()
         viewOne.layer.shadowOffset = CGSize(width: 1,
                                             height: 1)
@@ -51,13 +43,9 @@ class CustomTableViewCell: UITableViewCell {
         viewtwo.layer.backgroundColor = UIColor.colorFromHex("#F5F5F5").cgColor
         bookAppointmentt.setTitleColor(.link, for: .normal)
         bookAppointmentt.layer.cornerRadius = 8
-
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
-
 }

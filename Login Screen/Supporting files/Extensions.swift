@@ -4,13 +4,11 @@
 //
 //  Created by vidya.k on 09/05/22.
 //
-
-import Foundation
-
 import Foundation
 import UIKit
 
 extension UIColor {
+    
     static func rgbColor(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor.init(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
     }
@@ -23,10 +21,8 @@ extension UIColor {
         if hexString.count != 6 {
             return UIColor.magenta
         }
-        
         var rgb: UInt64 = 0
         Scanner.init(string: hexString).scanHexInt64(&rgb)
-        
         return UIColor.init(red: CGFloat((rgb & 0xFF0000) >> 16)/255,
                             green: CGFloat((rgb & 0x00FF00) >> 8)/255,
                             blue: CGFloat(rgb & 0x0000FF)/255,

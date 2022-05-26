@@ -8,8 +8,8 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var cellView: UIView!
     
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -21,6 +21,4 @@ class MenuCollectionViewCell: UICollectionViewCell {
         cellView.layer.backgroundColor = UIColor.colorFromHex("#FAFAFA").cgColor
         // Initialization code
     }
-    
-
 }

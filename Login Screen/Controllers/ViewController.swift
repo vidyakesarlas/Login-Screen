@@ -16,9 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var isEmailValid = false
     var isPasswordValid = false
-    
     var networkManager = NetworkManager()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +26,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         passwordTxtField.delegate = self
         // Do any additional setup after loading the view.
         loginButton.layer.cornerRadius = 15
-        
         self.userNameTxtField.layer.borderWidth = 2
         self.passwordTxtField.layer.borderWidth = 2
         self.userNameTxtField.layer.borderColor = UIColor.gray.cgColor
         self.passwordTxtField.layer.backgroundColor = UIColor.gray.cgColor
-        
         let pwd = "Aq9@)!(@21"
         let x = pwd.isValidPassword()
         print("is true--- ?\(x)")
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     //MARK: Textfield delegate methods
     
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
         if textField == self.userNameTxtField{
             self.userNameTxtField.layer.borderColor = UIColor.gray.cgColor
         }
@@ -55,29 +57,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = true
-        
-    }
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
-        
         return true;
     }
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         let mail = userNameTxtField.text!
         let pwd = passwordTxtField.text!
         
@@ -106,25 +91,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
             }
         }
-        
     }
     
-    
-    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        
-        //    self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
-        
         networkManager.callAPI(userCompletionHandler: { status in
             if status{
-                
-                //  print("HI")
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "next" , sender: self)
                 }
             }
             else{
-                
                 DispatchQueue.main.async{
                     self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
                     let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
@@ -133,9 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
-        
     }
-    
 }
 
 
