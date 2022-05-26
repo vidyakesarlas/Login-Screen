@@ -239,7 +239,6 @@ private class PopUpWindowView: UIView {
             popupDate.topAnchor.constraint(equalTo: popupView.topAnchor, constant: BorderWidth + 60),
             popupDate.heightAnchor.constraint(equalToConstant: 55)
         ])
-        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
