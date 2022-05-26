@@ -7,19 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, NetworkReachabilityProtocol {
     
     @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    var networkPathMonitor: NetworkPathMonitor?
     var isEmailValid = false
     var isPasswordValid = false
     var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startNetworkMonitoring()
         blueView.layer.cornerRadius = 55
         self.navigationController?.isNavigationBarHidden = true
         userNameTxtField.delegate = self
@@ -35,6 +37,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("is true--- ?\(x)")
     }
     
+    deinit {
+        self.stopNetworkMonitoring()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -61,18 +67,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         let mail = userNameTxtField.text!
         let pwd = passwordTxtField.text!
-        
         if textField == self.userNameTxtField{
             isEmailValid = mail.isValidEmail
             if isEmailValid == false{
                 self.userNameTxtField.layer.borderColor = UIColor.red.cgColor
-                //                         let alertContoller1 = UIAlertController (title: "Email ID is either incorrect or not valid" , message: "Please enter a mail ID which is of the format - user@domain.com or firstname.lastname@domain.com", preferredStyle: .alert)
-                //                         alertContoller1.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-                //                         present(alertContoller1, animated: true, completion: nil)
             }
             else{
                 self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
@@ -81,35 +82,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if textField == self.passwordTxtField {
             isPasswordValid = pwd.isValidPassword()
-            
             if isPasswordValid == false{
                 print("PASSWORD NOT VALID")
-                
                 self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
-                
             } else {
                 self.passwordTxtField.layer.borderColor = UIColor.gray.cgColor
             }
         }
     }
     
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-        networkManager.callAPI(userCompletionHandler: { status in
-            if status{
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "next" , sender: self)
-                }
-            }
-            else{
-                DispatchQueue.main.async{
-                    self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
-                    let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
-                    alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
-                    self.present(alertContoller, animated: true, completion: nil)
-                }
-            }
-        })
+    func networkStatusChanged(isConnected: Bool) {
+        print("networkStatusChanged called - \(isConnected)")
     }
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let pwd = passwordTxtField.text!
+        isPasswordValid = pwd.isValidPassword()
+        if self.isNetworkAvailable() {
+            if isPasswordValid == true{
+            networkManager.callAPI(userCompletionHandler: { status in
+                if status{
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "next" , sender: self)
+                    }
+                }
+                else{
+                    DispatchQueue.main.async{
+                        self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
+                        let alertContoller = UIAlertController (title: "Unsuccessful login" , message: "Please enter valid credentials", preferredStyle: .alert)
+                        alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+                        self.present(alertContoller, animated: true, completion: nil)
+                    }
+                }
+            })
+        }
+            else{
+                self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
+                let alertContoller = UIAlertController (title: "Password incorrect" , message: "Please enter a password which has atleast each one of caps, smallcase, numeric, special characters", preferredStyle: .alert)
+                alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+                self.present(alertContoller, animated: true, completion: nil)
+            }
+        } else {
+            let alertContoller1 = UIAlertController (title: "No internet connection" , message: "Please check your internet", preferredStyle: .alert)
+            alertContoller1.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+            self.present(alertContoller1, animated: true, completion: nil)
+        }
+        
+      
+}
 }
 
 

@@ -29,6 +29,20 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         doctorTableView.register(nibCell, forCellReuseIdentifier: "doctorCell")
         doctorTableView.dataSource = self
         doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
+        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        self.navigationController?.navigationBar.isTranslucent = true
+         appearance.backgroundColor = UIColor.systemBlue
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+//        appearance.backgroundColor = UIColor.systemBlue
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
+        // pass "true" for fixing iOS 15.0 black bg issue
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // We need to set tintcolor for iOS 15.0
+//        appearance.shadowColor = .clear    //removing navigationbar 1 px bottom border.
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         //fetch doctors to display
         let plistsource: String = Bundle.main.path(forResource: self.docType.description, ofType: "plist")!
         data = dentist.getDoctorObject(path: plistsource)
