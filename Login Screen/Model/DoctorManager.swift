@@ -34,8 +34,5 @@ class DoctorManager{
             }
         }
         return doctors
-        
     }
-    
-    
 }
