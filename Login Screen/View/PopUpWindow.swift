@@ -51,7 +51,6 @@ class PopUpWindow: UIViewController {
     }
     
     @objc func okButtonPressed(){
-        
         self.popUpWindowView.popupText.text = "APPOINTMENT BOOKED!"
         print("date selected........:\(popUpWindowView.popupDate.date)")
         let calendar = Calendar.current

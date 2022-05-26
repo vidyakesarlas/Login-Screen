@@ -10,35 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Override point for customization after application launch.
-//        
-//        let height = 300
-//                
-//        let navbar = UINavigationBar()
-//        navbar.frame.size.width = UIScreen.main.bounds.size.width
-//        navbar.frame.size.height = CGFloat(height)
-//        navbar.frame = CGRect(x: 0,
-//                              y: 0,
-//                              width: navbar.frame.size.width,
-//                              height: navbar.frame.size.height)
-        
-        
-        
-        
+ 
         let navBarApp = UINavigationBar.appearance()
         navBarApp.backgroundColor = .systemBlue
         navBarApp.barTintColor = .white
         navBarApp.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        navBarApp.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            navBarApp.heightAnchor.constraint(equalToConstant: 100)
-//        ])
-       
-       
         return true
     }
 

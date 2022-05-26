@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverPresentationControllerDelegate, MyTableViewCellDelegate, PopUpWindowManager {
     
     var data: [Doctors] = []
@@ -19,6 +18,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     static var datePick: Date = Date()
     var dentist = DoctorManager()
     @IBOutlet weak var doctorTableView: UITableView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,68 +36,14 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     
     
     func okButtonPressed(index: Int) {
-        
         popUpWindow.dismissView()
         let alertContoller = UIAlertController (title: "Appointment booked!" , message: "You've booked an appointment for the date \(DoctorsViewController.datePicked) and time \(DoctorsViewController.timePciked) hours", preferredStyle: .alert)
         alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
         self.present(alertContoller, animated: true, completion: nil)
-        
-        switch docType {
-            
-        case .dental:
-            let dentist = docType.description[index]
-            dentist.appmtBooked = true
-            
-        case .dermatology:
-            let dermatologist =  docType.description
-            dermatologist.appmtBooked = true
-            
-        case .digestive:
-            let digestive =  docType.description
-            digestive.appmtBooked = true
-            
-        case .ent:
-            let ent = self.ents[index]
-            ent.appmtBooked = true
-            
-        case .eyeSpecialist:
-            let eye = self.eyespecialists[index]
-            eye.appmtBooked = true
-            
-        case .childSpecialist:
-            let childSpecialist = self.childspecialists[index]
-            childSpecialist.appmtBooked = true
-            
-        case .gynaecology:
-            let gynaecologist = self.gynaecologists[index]
-            gynaecologist.appmtBooked = true
-            
-        case .homeopathy:
-            let homeopathist = self.homeopathists[index]
-            homeopathist.appmtBooked = true
-            
-        case .orthopaedician:
-            let orthopaedecian = self.orthopaedicians[index]
-            orthopaedecian.appmtBooked = true
-            
-        case .psychiatry:
-            let pshychiatrist = self.psychiatrists[index]
-            pshychiatrist.appmtBooked = true
-            
-        case .sexSpecialist:
-            let sexSpecialist = self.sexspecialists[index]
-            sexSpecialist.appmtBooked = true
-            
-        case .generalPhysician:
-            let physician = self.physicians[index]
-            physician.appmtBooked = true
-            
-        default:
-            print("none")
-        }
+        let doctor = data[index]
+        doctor.appmtBooked = true
         doctorTableView.reloadData()
     }
-    
     
     func didTapButton(with title: String, index: Int) {
         print("title: \(title)")
