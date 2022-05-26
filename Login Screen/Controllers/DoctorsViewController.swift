@@ -19,7 +19,6 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     var dentist = DoctorManager()
     @IBOutlet weak var doctorTableView: UITableView!
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         doctorTableView.rowHeight = 280

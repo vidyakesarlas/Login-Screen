@@ -9,11 +9,8 @@
 import Foundation
 
 class DoctorManager{
-    
     var doctors: [Doctors] = []
-    
     func getDoctorObject(path: String) -> [Doctors]{
-        
         var name: String = ""
         var yrs: String = ""
         var designation: String = ""
