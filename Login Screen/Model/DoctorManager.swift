@@ -30,7 +30,6 @@ class DoctorManager{
                 image = (doc as AnyObject).object(forKey: "image") as! String
                 let doc1 = Doctors(image: image, name:name, yrs:  yrs, designation:  designation, address:  address, fees: fees)
                 doctors.append(doc1)
-                print(doctors.count)
             }
         }
         return doctors
