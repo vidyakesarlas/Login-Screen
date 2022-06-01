@@ -29,7 +29,6 @@ class Doctors{
     }
     
     func notifCall(titleSent: String, bodySent: String, dateBooked: Date){
-        
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
         }

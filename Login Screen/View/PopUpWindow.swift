@@ -95,7 +95,6 @@ class PopUpWindow: UIViewController {
     override func viewDidLoad() {
         print("date pciked is:\(popUpWindowView.popupDate.date)")
     }
-    
 }
 
 private class PopUpWindowView: UIView {

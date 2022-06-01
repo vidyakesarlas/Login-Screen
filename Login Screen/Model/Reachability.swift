@@ -25,7 +25,6 @@ public extension Notification.Name {
 }
 
 public class Reachability {
-
     public typealias NetworkReachable = (Reachability) -> ()
     public typealias NetworkUnreachable = (Reachability) -> ()
 

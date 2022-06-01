@@ -16,7 +16,7 @@ class DoctorManager{
         var designation: String = ""
         var address: String = ""
         var fees: String = ""
-        var appmtBooked: Bool = false
+        let appmtBooked: Bool = false
         var image: String = ""
         
         if let docArray = NSMutableArray(contentsOfFile: path){

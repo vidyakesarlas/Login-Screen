@@ -18,7 +18,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     static var datePick: Date = Date()
     var dentist = DoctorManager()
     @IBOutlet weak var doctorTableView: UITableView!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         doctorTableView.rowHeight = 280
@@ -29,19 +29,22 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         doctorTableView.dataSource = self
         doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
         let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        self.navigationController?.navigationBar.isTranslucent = true
-         appearance.backgroundColor = UIColor.systemBlue
+        //        appearance.configureWithOpaqueBackground()
+        //        self.navigationController?.navigationBar.isTranslucent = true
+        appearance.backgroundColor = UIColor.systemBlue
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-//        appearance.backgroundColor = UIColor.systemBlue
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
-        // pass "true" for fixing iOS 15.0 black bg issue
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        let standardAppearance = UINavigationBarAppearance()
         
-        // We need to set tintcolor for iOS 15.0
-//        appearance.shadowColor = .clear    //removing navigationbar 1 px bottom border.
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        // Title font color
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        // prevent Nav Bar color change on scroll view push behind NavBar
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemBlue
+        
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
         //fetch doctors to display
         let plistsource: String = Bundle.main.path(forResource: self.docType.description, ofType: "plist")!
         data = dentist.getDoctorObject(path: plistsource)

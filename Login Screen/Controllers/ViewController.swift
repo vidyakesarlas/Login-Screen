@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-
     var isEmailValid = false
     var isPasswordValid = false
     var networkManager = NetworkManager()
@@ -36,7 +35,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("is true--- ?\(x)")
     }
     
- 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -94,7 +92,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let pwd = passwordTxtField.text!
         isPasswordValid = pwd.isValidPassword()
-        
         if let reachability = try? Reachability(){
             if reachability.connection != .unavailable {
                 if isPasswordValid == true{
@@ -127,8 +124,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertContoller1, animated: true, completion: nil)
             }
         }
-        
-       
 }
 }
 
