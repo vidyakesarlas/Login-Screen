@@ -108,13 +108,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             print(obj)
             docArray.write(toFile: plistsource.path as String, atomically: true)
         }
-        //        do{
-        //        let encoded = try JSONEncoder().encode(Doctors(image: data[index].image, name: data[index].name, yrs: data[index].yrs, designation: data[index].designation, address: data[index].address, fees: data[index].fees, appmtBooked: data[index].appmtBooked))
-        //            doctorList.writeDoctorObject(path: plistsource, data: encoded)
-        //        }
-        //        catch{
-        //            print(error)
-        //        }
+      
         doctorTableView.reloadData()
     }
     
