@@ -10,13 +10,14 @@ import UIKit
 class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverPresentationControllerDelegate, MyTableViewCellDelegate, PopUpWindowManager {
     
     var data: [Doctors] = []
+    var newData: [Doctors] = []
     var docType: DoctorType = .none
     var okSelected: Bool = false
     var popUpWindow: PopUpWindow!
     static var datePicked:  String = ""
     static var timePciked: String = ""
     static var datePick: Date = Date()
-    var dentist = DoctorManager()
+    var doctorList = DoctorManager()
     @IBOutlet weak var doctorTableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,19 +46,75 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
+        if UIApplication.isFirstLaunch(){
+            copyFilesFromBundleToDocumentsFolderWith(fileExtension: ".plist")
+            let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let documentsDirectory = urls[0]
+            print(documentsDirectory)
+            let docUrl = documentsDirectory.appendingPathComponent("\(self.docType.description).plist")
+            //print(docUrl)
+            //fetch doctors to display
+            let plistsource: URL = docUrl
+            data = doctorList.getDoctorObject(path: plistsource)
+            print(data)
+        }
+        else{
+            
+        }
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = urls[0]
+        print(documentsDirectory)
+        let docUrl = documentsDirectory.appendingPathComponent("\(self.docType.description).plist")
+        print(docUrl)
         //fetch doctors to display
-        let plistsource: String = Bundle.main.path(forResource: self.docType.description, ofType: "plist")!
-        data = dentist.getDoctorObject(path: plistsource)
+        let plistsource: URL = docUrl
+        data = doctorList.getDoctorObject(path: plistsource)
+        print(data)
+        
     }
     
+    func copyFilesFromBundleToDocumentsFolderWith(fileExtension: String) {
+        if let resPath = Bundle.main.resourcePath {
+            do {
+                let dirContents = try FileManager.default.contentsOfDirectory(atPath: resPath)
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+                let filteredFiles = dirContents.filter{ $0.contains(fileExtension)}
+                for fileName in filteredFiles {
+                    if let documentsURL = documentsURL {
+                        let sourceURL = Bundle.main.bundleURL.appendingPathComponent(fileName)
+                        let destURL = documentsURL.appendingPathComponent(fileName)
+                        do { try FileManager.default.copyItem(at: sourceURL, to: destURL) } catch { }
+                    }
+                }
+            } catch { }
+        }
+    }
     
     func okButtonPressed(index: Int) {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        var documentsDirectory = urls[0]
+        let docUrl = documentsDirectory.appendingPathComponent("\(self.docType.description).plist")
+        let plistsource: URL = docUrl
+        
         popUpWindow.dismissView()
         let alertContoller = UIAlertController (title: "Appointment booked!" , message: "You've booked an appointment for the date \(DoctorsViewController.datePicked) and time \(DoctorsViewController.timePciked) hours", preferredStyle: .alert)
         alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
         self.present(alertContoller, animated: true, completion: nil)
-        let doctor = data[index]
-        doctor.appmtBooked = true
+        data[index].appmtBooked = true
+        print("name of doc:\(data[index].name)")
+        if let docArray = NSMutableArray(contentsOf: plistsource ?? docUrl){
+            let obj = docArray[index] as! NSMutableDictionary
+            obj["appmtBooked"] = true
+            print(obj)
+            docArray.write(toFile: plistsource.path as String, atomically: true)
+        }
+        //        do{
+        //        let encoded = try JSONEncoder().encode(Doctors(image: data[index].image, name: data[index].name, yrs: data[index].yrs, designation: data[index].designation, address: data[index].address, fees: data[index].fees, appmtBooked: data[index].appmtBooked))
+        //            doctorList.writeDoctorObject(path: plistsource, data: encoded)
+        //        }
+        //        catch{
+        //            print(error)
+        //        }
         doctorTableView.reloadData()
     }
     
@@ -89,6 +146,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         switch docType {
         case .dental:
             let dentistt = data[indexPath.row]
+            print("data wanted-\(dentistt)")
             cell.doctName.text = dentistt.name
             cell.doctImage.image = UIImage(named: dentistt.image)
             cell.experience.text = dentistt.yrs + " years experience overall"
@@ -317,3 +375,13 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     
 }
 
+extension UIApplication {
+    class func isFirstLaunch() -> Bool {
+        if !UserDefaults.standard.bool(forKey: "hasBeenLaunchedBeforeFlag") {
+            UserDefaults.standard.set(true, forKey: "hasBeenLaunchedBeforeFlag")
+            UserDefaults.standard.synchronize()
+            return true
+        }
+        return false
+    }
+}

@@ -16,6 +16,8 @@
             <string>6</string>
             <key>image</key>
             <string>John</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -30,6 +32,8 @@
             <string>6</string>
             <key>image</key>
             <string>Nagarjuna</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -44,6 +48,8 @@
             <string>6</string>
             <key>image</key>
             <string>Abheetha</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -58,6 +64,8 @@
             <string>6</string>
             <key>image</key>
             <string>Raghav</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -72,6 +80,8 @@
             <string>6</string>
             <key>image</key>
             <string>Spoorthy</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -86,6 +96,8 @@
             <string>6</string>
             <key>image</key>
             <string>Shanti</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -100,6 +112,8 @@
             <string>6</string>
             <key>image</key>
             <string>Reena</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -114,6 +128,8 @@
             <string>6</string>
             <key>image</key>
             <string>Arundati</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -128,9 +144,9 @@
             <string>6</string>
             <key>image</key>
             <string>Sunidhi</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
-        
-      
-        
         </array>
 </plist>
+

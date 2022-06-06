@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81DA398284E140500C7107D /* GeneralPhysician.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA397284E140500C7107D /* GeneralPhysician.plist */; };
+		A81DA39A284E147700C7107D /* SexSpecialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA399284E147700C7107D /* SexSpecialist.plist */; };
+		A81DA39C284E14BB00C7107D /* MentalWellness.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA39B284E14BB00C7107D /* MentalWellness.plist */; };
+		A81DA39E284E14F000C7107D /* Women'sHealth.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA39D284E14F000C7107D /* Women'sHealth.plist */; };
+		A81DA3A0284E152300C7107D /* ChildSpecialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA39F284E152300C7107D /* ChildSpecialist.plist */; };
+		A81DA3A2284E154B00C7107D /* EyeSpecialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA3A1284E154B00C7107D /* EyeSpecialist.plist */; };
+		A81DA3A4284E158300C7107D /* EarNoseThroat.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA3A3284E158300C7107D /* EarNoseThroat.plist */; };
+		A81DA3A6284E15A500C7107D /* DigestiveIssues.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA3A5284E15A500C7107D /* DigestiveIssues.plist */; };
+		A81DA3A8284E15D900C7107D /* Skin&Hair.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81DA3A7284E15D900C7107D /* Skin&Hair.plist */; };
 		A8A1D1B5281277CD0061175C /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1D1B4281277CD0061175C /* RoundedView.swift */; };
 		A8A606BA2829474600599BA8 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606B92829474600599BA8 /* PopUpWindow.swift */; };
 		A8A606BC282948C100599BA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BB282948C100599BA8 /* Extensions.swift */; };
 		A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */; };
 		A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7504280E8F13001C1F40 /* Concerns.swift */; };
 		A8B8B943283F749B0049982D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8B942283F749B0049982D /* Reachability.swift */; };
+		A8CDF9BD284893EA002E50DA /* BoneandJoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8CDF9BC284893EA002E50DA /* BoneandJoints.plist */; };
 		A8D0BF50283DEE8100C6F19C /* Dentist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D0BF4F283DEE8100C6F19C /* Dentist.plist */; };
 		A8D0BF60283E2BF200C6F19C /* DoctorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */; };
-		A8D0BF62283E3BE700C6F19C /* Skin & Hair.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */; };
 		A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */; };
 		A8D284092811593B006FA34D /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */; };
 		A8D2840B28115A4F006FA34D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2840A28115A4F006FA34D /* MenuViewController.swift */; };
-		A8D3CD80283F31AC005BC00D /* Digestive Issues.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD7F283F31AC005BC00D /* Digestive Issues.plist */; };
-		A8D3CD82283F333B005BC00D /* Ear Nose Throat.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD81283F333B005BC00D /* Ear Nose Throat.plist */; };
-		A8D3CD84283F3474005BC00D /* Eye Specialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD83283F3474005BC00D /* Eye Specialist.plist */; };
-		A8D3CD86283F3503005BC00D /* Child Specialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD85283F3503005BC00D /* Child Specialist.plist */; };
-		A8D3CD88283F357A005BC00D /* Women's Health.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD87283F357A005BC00D /* Women's Health.plist */; };
 		A8D3CD8A283F35D7005BC00D /* Homeopathy.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD89283F35D7005BC00D /* Homeopathy.plist */; };
-		A8D3CD8C283F3631005BC00D /* Bone & Joints.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD8B283F3631005BC00D /* Bone & Joints.plist */; };
-		A8D3CD8E283F3679005BC00D /* Mental Wellness.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD8D283F3679005BC00D /* Mental Wellness.plist */; };
-		A8D3CD90283F36DB005BC00D /* Sex Specialist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD8F283F36DB005BC00D /* Sex Specialist.plist */; };
-		A8D3CD92283F3729005BC00D /* General Physician.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D3CD91283F3729005BC00D /* General Physician.plist */; };
 		A8D3CD94283F37F5005BC00D /* DoctorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D3CD93283F37F5005BC00D /* DoctorType.swift */; };
 		A8D4D62C2806D76800AD9C20 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D4D62B2806D76800AD9C20 /* String+Extension.swift */; };
 		A8DAAA6C2803FFFC00440CA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAAA6B2803FFFC00440CA3 /* AppDelegate.swift */; };
@@ -64,28 +64,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A81DA397284E140500C7107D /* GeneralPhysician.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GeneralPhysician.plist; sourceTree = "<group>"; };
+		A81DA399284E147700C7107D /* SexSpecialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SexSpecialist.plist; sourceTree = "<group>"; };
+		A81DA39B284E14BB00C7107D /* MentalWellness.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MentalWellness.plist; sourceTree = "<group>"; };
+		A81DA39D284E14F000C7107D /* Women'sHealth.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Women'sHealth.plist"; sourceTree = "<group>"; };
+		A81DA39F284E152300C7107D /* ChildSpecialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ChildSpecialist.plist; sourceTree = "<group>"; };
+		A81DA3A1284E154B00C7107D /* EyeSpecialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EyeSpecialist.plist; sourceTree = "<group>"; };
+		A81DA3A3284E158300C7107D /* EarNoseThroat.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EarNoseThroat.plist; sourceTree = "<group>"; };
+		A81DA3A5284E15A500C7107D /* DigestiveIssues.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DigestiveIssues.plist; sourceTree = "<group>"; };
+		A81DA3A7284E15D900C7107D /* Skin&Hair.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Skin&Hair.plist"; sourceTree = "<group>"; };
 		A8A1D1B4281277CD0061175C /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		A8A606B92829474600599BA8 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 		A8A606BB282948C100599BA8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8AC7504280E8F13001C1F40 /* Concerns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerns.swift; sourceTree = "<group>"; };
 		A8B8B942283F749B0049982D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A8CDF9BC284893EA002E50DA /* BoneandJoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BoneandJoints.plist; sourceTree = "<group>"; };
 		A8D0BF4F283DEE8100C6F19C /* Dentist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Dentist.plist; sourceTree = "<group>"; };
 		A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorManager.swift; sourceTree = "<group>"; };
-		A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Skin & Hair.plist"; sourceTree = "<group>"; };
 		A8D284062811593B006FA34D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8D284072811593B006FA34D /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8D2840A28115A4F006FA34D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		A8D3CD7F283F31AC005BC00D /* Digestive Issues.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Digestive Issues.plist"; sourceTree = "<group>"; };
-		A8D3CD81283F333B005BC00D /* Ear Nose Throat.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ear Nose Throat.plist"; sourceTree = "<group>"; };
-		A8D3CD83283F3474005BC00D /* Eye Specialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Eye Specialist.plist"; sourceTree = "<group>"; };
-		A8D3CD85283F3503005BC00D /* Child Specialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Child Specialist.plist"; sourceTree = "<group>"; };
-		A8D3CD87283F357A005BC00D /* Women's Health.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Women's Health.plist"; sourceTree = "<group>"; };
 		A8D3CD89283F35D7005BC00D /* Homeopathy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Homeopathy.plist; sourceTree = "<group>"; };
-		A8D3CD8B283F3631005BC00D /* Bone & Joints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bone & Joints.plist"; sourceTree = "<group>"; };
-		A8D3CD8D283F3679005BC00D /* Mental Wellness.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mental Wellness.plist"; sourceTree = "<group>"; };
-		A8D3CD8F283F36DB005BC00D /* Sex Specialist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sex Specialist.plist"; sourceTree = "<group>"; };
-		A8D3CD91283F3729005BC00D /* General Physician.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "General Physician.plist"; sourceTree = "<group>"; };
 		A8D3CD93283F37F5005BC00D /* DoctorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorType.swift; sourceTree = "<group>"; };
 		A8D4D62B2806D76800AD9C20 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A8DAAA682803FFFC00440CA3 /* Login Screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Login Screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,18 +170,18 @@
 		A8D504DA2833772600CC7E9C /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				A8D3CD91283F3729005BC00D /* General Physician.plist */,
-				A8D3CD8F283F36DB005BC00D /* Sex Specialist.plist */,
-				A8D3CD8D283F3679005BC00D /* Mental Wellness.plist */,
-				A8D3CD8B283F3631005BC00D /* Bone & Joints.plist */,
+				A81DA397284E140500C7107D /* GeneralPhysician.plist */,
+				A81DA399284E147700C7107D /* SexSpecialist.plist */,
+				A81DA39B284E14BB00C7107D /* MentalWellness.plist */,
 				A8D3CD89283F35D7005BC00D /* Homeopathy.plist */,
-				A8D3CD87283F357A005BC00D /* Women's Health.plist */,
-				A8D3CD85283F3503005BC00D /* Child Specialist.plist */,
-				A8D3CD83283F3474005BC00D /* Eye Specialist.plist */,
-				A8D3CD81283F333B005BC00D /* Ear Nose Throat.plist */,
-				A8D3CD7F283F31AC005BC00D /* Digestive Issues.plist */,
-				A8D0BF61283E3BE700C6F19C /* Skin & Hair.plist */,
+				A81DA39D284E14F000C7107D /* Women'sHealth.plist */,
+				A81DA39F284E152300C7107D /* ChildSpecialist.plist */,
+				A81DA3A1284E154B00C7107D /* EyeSpecialist.plist */,
+				A81DA3A3284E158300C7107D /* EarNoseThroat.plist */,
+				A81DA3A5284E15A500C7107D /* DigestiveIssues.plist */,
+				A81DA3A7284E15D900C7107D /* Skin&Hair.plist */,
 				A8D0BF4F283DEE8100C6F19C /* Dentist.plist */,
+				A8CDF9BC284893EA002E50DA /* BoneandJoints.plist */,
 				A8A1D1B4281277CD0061175C /* RoundedView.swift */,
 				A8A606BB282948C100599BA8 /* Extensions.swift */,
 				A8D4D62B2806D76800AD9C20 /* String+Extension.swift */,
@@ -347,23 +347,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8D3CD84283F3474005BC00D /* Eye Specialist.plist in Resources */,
-				A8D3CD92283F3729005BC00D /* General Physician.plist in Resources */,
-				A8D3CD80283F31AC005BC00D /* Digestive Issues.plist in Resources */,
+				A81DA3A0284E152300C7107D /* ChildSpecialist.plist in Resources */,
+				A81DA3A6284E15A500C7107D /* DigestiveIssues.plist in Resources */,
+				A81DA39E284E14F000C7107D /* Women'sHealth.plist in Resources */,
 				A8DAAA782803FFFD00440CA3 /* LaunchScreen.storyboard in Resources */,
-				A8D3CD82283F333B005BC00D /* Ear Nose Throat.plist in Resources */,
-				A8D3CD86283F3503005BC00D /* Child Specialist.plist in Resources */,
+				A81DA3A2284E154B00C7107D /* EyeSpecialist.plist in Resources */,
+				A81DA3A4284E158300C7107D /* EarNoseThroat.plist in Resources */,
+				A81DA3A8284E15D900C7107D /* Skin&Hair.plist in Resources */,
+				A81DA398284E140500C7107D /* GeneralPhysician.plist in Resources */,
 				A8DAAA752803FFFD00440CA3 /* Assets.xcassets in Resources */,
+				A8CDF9BD284893EA002E50DA /* BoneandJoints.plist in Resources */,
+				A81DA39A284E147700C7107D /* SexSpecialist.plist in Resources */,
 				A8D3CD8A283F35D7005BC00D /* Homeopathy.plist in Resources */,
 				A8DAAA732803FFFC00440CA3 /* Main.storyboard in Resources */,
-				A8D3CD8E283F3679005BC00D /* Mental Wellness.plist in Resources */,
+				A81DA39C284E14BB00C7107D /* MentalWellness.plist in Resources */,
 				A8E71795282250F80095BFF2 /* CustomTableViewCell.xib in Resources */,
-				A8D3CD88283F357A005BC00D /* Women's Health.plist in Resources */,
 				A8D0BF50283DEE8100C6F19C /* Dentist.plist in Resources */,
-				A8D0BF62283E3BE700C6F19C /* Skin & Hair.plist in Resources */,
-				A8D3CD8C283F3631005BC00D /* Bone & Joints.plist in Resources */,
 				A8D284092811593B006FA34D /* MenuCollectionViewCell.xib in Resources */,
-				A8D3CD90283F36DB005BC00D /* Sex Specialist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

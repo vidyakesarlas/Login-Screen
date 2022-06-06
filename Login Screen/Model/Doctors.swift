@@ -9,8 +9,7 @@ import Foundation
 
 import UserNotifications
 
-class Doctors{
-    
+class Doctors: Codable{
     var image: String = ""
     var name: String = ""
     var yrs: String = ""
@@ -19,13 +18,14 @@ class Doctors{
     var fees: String = ""
     var appmtBooked: Bool = false
     
-    init(image: String, name: String, yrs: String, designation: String, address: String, fees: String){
+    init(image: String, name: String, yrs: String, designation: String, address: String, fees: String, appmtBooked: Bool){
         self.image = image
         self.name = name
         self.yrs = yrs
         self.designation = designation
         self.address = address
         self.fees = fees
+        self.appmtBooked = appmtBooked
     }
     
     func notifCall(titleSent: String, bodySent: String, dateBooked: Date){

@@ -10,16 +10,17 @@ import Foundation
 
 class DoctorManager{
     var doctors: [Doctors] = []
-    func getDoctorObject(path: String) -> [Doctors]{
+    func getDoctorObject(path: URL) -> [Doctors]{
         var name: String = ""
         var yrs: String = ""
         var designation: String = ""
         var address: String = ""
         var fees: String = ""
-        let appmtBooked: Bool = false
+        var appmtBooked: Bool = false
         var image: String = ""
         
-        if let docArray = NSMutableArray(contentsOfFile: path){
+        if let docArray = NSMutableArray(contentsOf: path){
+            
             for (doc) in docArray
             {
                 name = (doc as AnyObject).object(forKey: "name") as! String
@@ -28,10 +29,34 @@ class DoctorManager{
                 fees = ( doc as AnyObject).object(forKey: "fees") as! String
                 address = ( doc as AnyObject).object(forKey: "address") as! String
                 image = (doc as AnyObject).object(forKey: "image") as! String
-                let doc1 = Doctors(image: image, name:name, yrs:  yrs, designation:  designation, address:  address, fees: fees)
+                appmtBooked = (doc as AnyObject).object(forKey: "appmtBooked") as! Bool
+                
+               // appmtBooked = (doc as AnyObject).object(forKey: "appmtBooked") as! String
+                print("hi")
+                let doc1 = Doctors(image: image, name:name, yrs:  yrs, designation:  designation, address:  address, fees: fees, appmtBooked: appmtBooked)
                 doctors.append(doc1)
             }
         }
         return doctors
     }
+    
+    func writeDoctorObject(path: URL, data: Data){
+    
+               do {
+
+                   if try data.write(to: path, options: .completeFileProtection) != nil {
+                       
+                       print("data succesfully written")
+                    
+                   }
+
+               } catch {
+
+                   print("File write failed")
+
+               }
+
+    }
+    
+    
 }

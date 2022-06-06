@@ -62,7 +62,6 @@ class PopUpWindow: UIViewController {
         DoctorsViewController.timePciked = timeStr
         delegate?.okButtonPressed(index: cellIndex)
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     @objc func dismissView(){

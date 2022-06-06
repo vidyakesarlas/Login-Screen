@@ -23,22 +23,21 @@ enum DoctorType{
     case generalPhysician
     case none
     
-    
     var description : String {
         switch self {
         // Use Internationalization, as appropriate.
         case .dental: return "Dentist"
-        case .dermatology: return "Skin & Hair"
-        case .digestive: return "Digestive Issues"
-        case .ent: return "Ear Nose Throat"
-        case .eyeSpecialist: return "Eye Specialist"
-        case .childSpecialist: return "Child Specialist"
-        case .gynaecology: return "Women's Health"
+        case .dermatology: return "Skin&Hair"
+        case .digestive: return "DigestiveIssues"
+        case .ent: return "EarNoseThroat"
+        case .eyeSpecialist: return "EyeSpecialist"
+        case .childSpecialist: return "ChildSpecialist"
+        case .gynaecology: return "Women'sHealth"
         case .homeopathy: return "Homeopathy"
-        case .orthopaedician: return "Bone and Joints"
-        case .psychiatry: return "Mental Wellness"
-        case .sexSpecialist: return "Sex Specialist"
-        case .generalPhysician: return "General Physician"
+        case .orthopaedician: return "BoneandJoints"
+        case .psychiatry: return "MentalWellness"
+        case .sexSpecialist: return "SexSpecialist"
+        case .generalPhysician: return "GeneralPhysician"
         default: return ""
         }
       }

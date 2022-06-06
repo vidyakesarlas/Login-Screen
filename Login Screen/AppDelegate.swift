@@ -10,13 +10,17 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navBarApp = UINavigationBar.appearance()
         navBarApp.backgroundColor = .systemBlue
         navBarApp.barTintColor = .white
         navBarApp.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         return true
     }
+    
+  
 
     // MARK: UISceneSession Lifecycle
 

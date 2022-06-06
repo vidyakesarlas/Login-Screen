@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <array>
-        
         <dict>
             <key>name</key>
             <string>John</string>
@@ -11,11 +10,13 @@
             <key>address</key>
             <string>Adugodi 5 block, BGS Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>John</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -25,11 +26,13 @@
             <key>address</key>
             <string>Adugodi 5 block, BGS Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Nagarjuna</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -39,11 +42,13 @@
             <key>address</key>
             <string>Adugodi 5 block, BGS Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Abheetha</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -53,11 +58,13 @@
             <key>address</key>
             <string>Adugodi 5 block, BGS Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Raghav</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -67,11 +74,13 @@
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Spoorthy</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -81,11 +90,13 @@
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Shanti</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -95,11 +106,13 @@
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Reena</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -109,11 +122,13 @@
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Arundati</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         <dict>
             <key>name</key>
@@ -123,14 +138,18 @@
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
-            <string>Bone and Joints</string>
+            <string>Sex Specialist</string>
             <key>yrs</key>
             <string>6</string>
             <key>image</key>
             <string>Sunidhi</string>
+            <key>appmtBooked</key>
+            <false/>
         </dict>
         
       
         
         </array>
+    
+    
 </plist>

@@ -28,6 +28,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                 Concerns(image: "sex", name: DoctorType.sexSpecialist),
                                 Concerns(image: "stethoscope", name: DoctorType.generalPhysician),
     ]
+    
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var cityName: UIBarButtonItem!
 
@@ -58,7 +59,6 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         menuCollectionView.layer.masksToBounds = true
         menuCollectionView.setCollectionViewLayout(layout, animated: true)
         menuCollectionView.reloadData()
-        
     }
     
     @IBAction func locationName(_ sender: Any) {
@@ -74,7 +74,6 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let lay = collectionViewLayout as! UICollectionViewFlowLayout
         let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
-        
         return CGSize(width:widthPerItem, height:100)
     }
     
