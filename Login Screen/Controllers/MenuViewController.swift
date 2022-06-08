@@ -8,14 +8,34 @@
 import UIKit
 import CoreLocation
 
-class MenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class MenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UISearchResultsUpdating{
+   
+    var searching = false
+    var searchedItem = [Concerns]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     var city: String?
     var selectedType: DoctorType = .none
     var menuVC:MenuViewController?
     let locationMan = CLLocationManager()
+    @IBOutlet weak var searchBar1: UISearchBar!
     let menuID = "MenuCollectionViewCell"
+
     var concerns: [Concerns] = [Concerns(image: "dentalcare", name: DoctorType.dental),
+                                Concerns(image: "dermatologist", name: DoctorType.dermatology),
+                                Concerns(image: "digestive", name: DoctorType.digestive),
+                                Concerns(image: "ent", name: DoctorType.ent),
+                                Concerns(image: "eye", name: DoctorType.eyeSpecialist),
+                                Concerns(image: "fetus", name: DoctorType.gynaecology),
+                                Concerns(image: "gynaecology", name: DoctorType.gynaecology),
+                                Concerns(image: "homeopathy", name: DoctorType.homeopathy),
+                                Concerns(image: "humanbone", name: DoctorType.orthopaedician),
+                                Concerns(image: "mentalhealth", name: DoctorType.psychiatry),
+                                Concerns(image: "sex", name: DoctorType.sexSpecialist),
+                                Concerns(image: "stethoscope", name: DoctorType.generalPhysician),
+    ]
+    
+    var realConcerns: [Concerns] = [Concerns(image: "dentalcare", name: DoctorType.dental),
                                 Concerns(image: "dermatologist", name: DoctorType.dermatology),
                                 Concerns(image: "digestive", name: DoctorType.digestive),
                                 Concerns(image: "ent", name: DoctorType.ent),
@@ -31,7 +51,32 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var cityName: UIBarButtonItem!
-
+  
+    func configureSearchController(){
+        searchController.searchBar.sizeToFit()
+        self.navigationItem.searchController = searchController
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        self.navigationItem.hidesSearchBarWhenScrolling
+        = false
+        
+        definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search Concern by Name"
+        
+        searchController.searchBar.barTintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        searchController.searchBar.tintColor = UIColor.black
+         searchController.searchBar.backgroundColor = UIColor.white
+        searchController.searchBar.isTranslucent = true
+        searchController.searchBar.searchTextField.textColor = UIColor.black
+        
+        navigationItem.titleView?.layoutIfNeeded()
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
@@ -42,10 +87,13 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationController?.isNavigationBarHidden = false
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchController()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
+
         locationMan.delegate = self
         locationMan.requestWhenInUseAuthorization()
         locationMan.requestLocation()
@@ -67,6 +115,10 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Datasource methods
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 40)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
     }
@@ -78,19 +130,58 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return concerns.count
+        if searching{
+            return searchedItem.count
+        }
+        else{
+            return concerns.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: menuID, for: indexPath) as! MenuCollectionViewCell
         cell.layer.cornerRadius = 25
-        let concern = concerns[indexPath.row]
-        cell.imageView.image = UIImage(named: concern.image)
-        cell.imageView.layer.cornerRadius = 30
-        cell.imageView.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        cell.labelName.text = concern.name.description
-        cell.backgroundColor = UIColor.clear
+        if searching{
+            cell.imageView.image = UIImage(named: searchedItem[indexPath.row].image)
+            cell.imageView.layer.cornerRadius = 30
+            cell.imageView.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+            cell.labelName.text = searchedItem[indexPath.row].name.description
+            cell.backgroundColor = UIColor.clear
+        }
+        else{
+            let concern = concerns[indexPath.row]
+            cell.imageView.image = UIImage(named: concern.image)
+            cell.imageView.layer.cornerRadius = 30
+            cell.imageView.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+            cell.labelName.text = concern.name.description
+            cell.backgroundColor = UIColor.clear
+        }
         return cell
+    }
+    
+    func updateSearchResults(for searchController: UISearchController){
+        let searchText = searchController.searchBar.text!
+        if !searchText.isEmpty{
+            searching = true
+            searchedItem.removeAll()
+            for item in concerns{
+                if item.name.description.lowercased().contains(searchText.lowercased()){
+                    searchedItem.append(item)
+                }
+            }
+        }
+        else{
+            searching = false
+            searchedItem.removeAll()
+            searchedItem = concerns
+        }
+        menuCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchedItem.removeAll()
+        menuCollectionView.reloadData()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -98,11 +189,18 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let concern = concerns[indexPath.row]
-        selectedType = concern.name
-        self.performSegue(withIdentifier: "didSelect", sender: self)
+        if searching{
+            let concern = searchedItem[indexPath.row]
+            selectedType = concern.name
+            self.performSegue(withIdentifier: "didSelect", sender: self)
+        }
+        else{
+            let concern = concerns[indexPath.row]
+            selectedType = concern.name
+            self.performSegue(withIdentifier: "didSelect", sender: self)
+        }
     }
-    
+
     // MARK: - Location methods
     
     func getCoordinates(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> (CLLocationDegrees, CLLocationDegrees){

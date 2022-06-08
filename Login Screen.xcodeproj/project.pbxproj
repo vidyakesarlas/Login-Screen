@@ -137,6 +137,7 @@
 			children = (
 				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
 				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
+				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
 				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
 			);
 			path = Controllers;
@@ -162,7 +163,6 @@
 				A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */,
 				A8B8B942283F749B0049982D /* Reachability.swift */,
 				A8E71798282286760095BFF2 /* Doctors.swift */,
-				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

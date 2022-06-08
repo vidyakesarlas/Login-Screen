@@ -20,8 +20,23 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     var doctorList = DoctorManager()
     @IBOutlet weak var doctorTableView: UITableView!
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        
+        let newViewObject = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
+          navigationController?.pushViewController(newViewObject, animated: true)
+        
+    }
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let currWidth = logoutButton.customView?.widthAnchor.constraint(equalToConstant: 14)
+           currWidth?.isActive = true
+           let currHeight = logoutButton.customView?.heightAnchor.constraint(equalToConstant: 14)
+           currHeight?.isActive = true
+        
+        
+        
         doctorTableView.rowHeight = 280
         doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
         doctorTableView.estimatedRowHeight = UITableView.automaticDimension
