@@ -24,7 +24,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>Adugodi 5 block, BGS Clinic</string>
+        <string>Jayanagar 5 block, BGS Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -40,7 +40,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>Adugodi 5 block, BGS Clinic</string>
+        <string>JP Nagar 5 block, BGS Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -56,7 +56,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>Adugodi 5 block, BGS Clinic</string>
+        <string>Girinagar, BGS Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -72,7 +72,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>KS Town, Nethralaya Clinic</string>
+        <string>Nagavara, Nethralaya Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -88,7 +88,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>KS Town, Nethralaya Clinic</string>
+        <string>Anepalya, Nethralaya Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -104,7 +104,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>KS Town, Nethralaya Clinic</string>
+        <string>Banashankari 6th stage, Nethralaya Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -120,7 +120,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>KS Town, Nethralaya Clinic</string>
+        <string>Ejipura, Nethralaya Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -136,7 +136,7 @@
         <key>fees</key>
         <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
-        <string>KS Town, Nethralaya Clinic</string>
+        <string>Near navrang, rajajinagar, Nethralaya Clinic</string>
         <key>designation</key>
         <string>Eye specialist</string>
         <key>yrs</key>
@@ -146,10 +146,5 @@
         <key>appmtBooked</key>
         <false/>
     </dict>
-    
-    
-    
     </array>
-    
-    
     </plist>

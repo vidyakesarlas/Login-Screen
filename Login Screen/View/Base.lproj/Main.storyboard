@@ -201,12 +201,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+            <point key="canvasLocation" x="939" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iIb-3d-zin">
+            <objects>
+                <viewController id="wuA-nx-3op" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lVf-do-qzQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stethoscope2" translatesAutoresizingMaskIntoConstraints="NO" id="nud-Fq-yMC">
+                                <rect key="frame" x="0.0" y="45" width="414" height="806"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="doE-eG-gwe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCH-MZ-aC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3413" y="2123"/>
         </scene>
         <!--Health Concerns-->
         <scene sceneID="zMz-iz-cMm">
             <objects>
-                <viewController id="iSd-VQ-mDn" customClass="MenuViewController" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuVC" automaticallyAdjustsScrollViewInsets="NO" id="iSd-VQ-mDn" customClass="MenuViewController" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rho-V9-Yx9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +267,7 @@
                             <constraint firstItem="fVQ-dc-FdR" firstAttribute="trailing" secondItem="aK9-cc-IeL" secondAttribute="trailing" id="jOs-Ro-Rmo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Health Concerns" id="L6R-Et-vu6">
+                    <navigationItem key="navigationItem" title="Health Concerns" leftItemsSupplementBackButton="YES" id="L6R-Et-vu6">
                         <rightBarButtonItems>
                             <barButtonItem id="x4W-KX-WOu"/>
                             <barButtonItem title="Detect Location" image="location.circle.fill" catalog="system" style="plain" id="bZU-Zt-T6O">
@@ -275,7 +296,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sQ2-Cf-UyK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="30" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doctorCell" id="5rJ-zE-nhN" customClass="CustomTableViewCell" customModule="Login_Screen" customModuleProvider="target">
@@ -298,7 +319,7 @@
                         <constraints>
                             <constraint firstItem="pPL-gx-gRb" firstAttribute="bottom" secondItem="sQ2-Cf-UyK" secondAttribute="bottom" id="TQc-NF-TTf"/>
                             <constraint firstItem="sQ2-Cf-UyK" firstAttribute="leading" secondItem="pPL-gx-gRb" secondAttribute="leading" id="ipm-sb-SS1"/>
-                            <constraint firstItem="sQ2-Cf-UyK" firstAttribute="top" secondItem="pPL-gx-gRb" secondAttribute="top" id="vae-5E-9Qd"/>
+                            <constraint firstItem="sQ2-Cf-UyK" firstAttribute="top" secondItem="pPL-gx-gRb" secondAttribute="top" constant="30" id="vae-5E-9Qd"/>
                             <constraint firstItem="sQ2-Cf-UyK" firstAttribute="trailing" secondItem="pPL-gx-gRb" secondAttribute="trailing" id="yGU-rb-Olg"/>
                         </constraints>
                     </view>
@@ -316,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRt-Cx-AaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="84"/>
+            <point key="canvasLocation" x="2673.913043478261" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xNB-HM-R5e">
@@ -347,6 +368,7 @@
     <resources>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logout" width="26" height="26"/>
+        <image name="stethoscope2" width="183" height="275"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

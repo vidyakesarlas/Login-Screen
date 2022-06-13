@@ -8,18 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
+    var window: UIWindow?
     @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+  
     var isEmailValid = false
     var isPasswordValid = false
     var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true{
+            //user is already logged in just navigate him to home screen
+            let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+            self.navigationController?.pushViewController(homeVc, animated: false)
+            
+        }
+
         blueView.layer.cornerRadius = 55
         self.navigationController?.isNavigationBarHidden = true
         userNameTxtField.delegate = self
@@ -74,6 +82,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        
+        
+        
         if textField == self.passwordTxtField {
             isPasswordValid = pwd.isValidPassword()
             if isPasswordValid == false{
@@ -92,13 +103,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let pwd = passwordTxtField.text!
         isPasswordValid = pwd.isValidPassword()
+//        if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true{
         if let reachability = try? Reachability(){
             if reachability.connection != .unavailable {
                 if isPasswordValid == true{
                 networkManager.callAPI(userCompletionHandler: { status in
                     if status{
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "next" , sender: self)
+                        DispatchQueue.main.async { UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+                            let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+                            self.navigationController?.pushViewController(homeVc, animated: true)
+                            self.delegate.isUserLoggedIn = true
+                           // self.performSegue(withIdentifier: "next" , sender: self)
                         }
                     }
                     else{
@@ -124,8 +139,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertContoller1, animated: true, completion: nil)
             }
         }
+        
+        
+//        }else{
+//            let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+//            self.navigationController?.pushViewController(homeVc, animated: false)
+//        }
 }
-}
+    }
 
 
 

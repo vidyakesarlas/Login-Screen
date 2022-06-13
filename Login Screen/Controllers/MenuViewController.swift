@@ -9,25 +9,25 @@ import UIKit
 import CoreLocation
 
 class MenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UISearchResultsUpdating{
-   
+    let placeholderWidth = 200 // Replace with whatever value works for your placeholder text
+    var offset = UIOffset()
     var searching = false
     var searchedItem = [Concerns]()
     let searchController = UISearchController(searchResultsController: nil)
-    
     var city: String?
     var selectedType: DoctorType = .none
     var menuVC:MenuViewController?
     let locationMan = CLLocationManager()
     @IBOutlet weak var searchBar1: UISearchBar!
     let menuID = "MenuCollectionViewCell"
-
+    
     var concerns: [Concerns] = [Concerns(image: "dentalcare", name: DoctorType.dental),
                                 Concerns(image: "dermatologist", name: DoctorType.dermatology),
                                 Concerns(image: "digestive", name: DoctorType.digestive),
                                 Concerns(image: "ent", name: DoctorType.ent),
                                 Concerns(image: "eye", name: DoctorType.eyeSpecialist),
                                 Concerns(image: "fetus", name: DoctorType.gynaecology),
-                                Concerns(image: "gynaecology", name: DoctorType.gynaecology),
+                                Concerns(image: "gynaecology", name: DoctorType.childSpecialist),
                                 Concerns(image: "homeopathy", name: DoctorType.homeopathy),
                                 Concerns(image: "humanbone", name: DoctorType.orthopaedician),
                                 Concerns(image: "mentalhealth", name: DoctorType.psychiatry),
@@ -36,25 +36,28 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     ]
     
     var realConcerns: [Concerns] = [Concerns(image: "dentalcare", name: DoctorType.dental),
-                                Concerns(image: "dermatologist", name: DoctorType.dermatology),
-                                Concerns(image: "digestive", name: DoctorType.digestive),
-                                Concerns(image: "ent", name: DoctorType.ent),
-                                Concerns(image: "eye", name: DoctorType.eyeSpecialist),
-                                Concerns(image: "fetus", name: DoctorType.gynaecology),
-                                Concerns(image: "gynaecology", name: DoctorType.gynaecology),
-                                Concerns(image: "homeopathy", name: DoctorType.homeopathy),
-                                Concerns(image: "humanbone", name: DoctorType.orthopaedician),
-                                Concerns(image: "mentalhealth", name: DoctorType.psychiatry),
-                                Concerns(image: "sex", name: DoctorType.sexSpecialist),
-                                Concerns(image: "stethoscope", name: DoctorType.generalPhysician),
+                                    Concerns(image: "dermatologist", name: DoctorType.dermatology),
+                                    Concerns(image: "digestive", name: DoctorType.digestive),
+                                    Concerns(image: "ent", name: DoctorType.ent),
+                                    Concerns(image: "eye", name: DoctorType.eyeSpecialist),
+                                    Concerns(image: "fetus", name: DoctorType.gynaecology),
+                                    Concerns(image: "gynaecology", name: DoctorType.gynaecology),
+                                    Concerns(image: "homeopathy", name: DoctorType.homeopathy),
+                                    Concerns(image: "humanbone", name: DoctorType.orthopaedician),
+                                    Concerns(image: "mentalhealth", name: DoctorType.psychiatry),
+                                    Concerns(image: "sex", name: DoctorType.sexSpecialist),
+                                    Concerns(image: "stethoscope", name: DoctorType.generalPhysician),
     ]
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var cityName: UIBarButtonItem!
-  
+    
     func configureSearchController(){
-        searchController.searchBar.sizeToFit()
-        self.navigationItem.searchController = searchController
+        let myNewView=UIView(frame: CGRect(x: 0, y: 3, width: self.searchController.searchBar.frame.size.width, height: 35))
+        // Change UIView background colour
+        myNewView.backgroundColor=UIColor.lightGray
+        self.view.addSubview(myNewView)
+        myNewView.addSubview(searchController.searchBar)
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -63,19 +66,14 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
         self.navigationItem.hidesSearchBarWhenScrolling
         = false
-        
         definesPresentationContext = true
         searchController.searchBar.placeholder = "Search Concern by Name"
-        
         searchController.searchBar.barTintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         searchController.searchBar.tintColor = UIColor.black
-         searchController.searchBar.backgroundColor = UIColor.white
+        searchController.searchBar.backgroundColor = UIColor.white
         searchController.searchBar.isTranslucent = true
         searchController.searchBar.searchTextField.textColor = UIColor.black
-        
-        navigationItem.titleView?.layoutIfNeeded()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -87,13 +85,13 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationController?.isNavigationBarHidden = false
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
+        self.definesPresentationContext = true
+        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
-
         locationMan.delegate = self
         locationMan.requestWhenInUseAuthorization()
         locationMan.requestLocation()
@@ -200,7 +198,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.performSegue(withIdentifier: "didSelect", sender: self)
         }
     }
-
+    
     // MARK: - Location methods
     
     func getCoordinates(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> (CLLocationDegrees, CLLocationDegrees){
