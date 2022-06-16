@@ -85,8 +85,6 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         doctorTableView.dataSource = self
         doctorTableView.backgroundColor =  UIColor.colorFromHex("#F5F5F5")
         let appearance = UINavigationBarAppearance()
-        //        appearance.configureWithOpaqueBackground()
-        //        self.navigationController?.navigationBar.isTranslucent = true
         appearance.backgroundColor = UIColor.systemBlue
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.navigationController?.navigationBar.tintColor = UIColor.white

@@ -23,6 +23,7 @@
 		A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */; };
 		A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7504280E8F13001C1F40 /* Concerns.swift */; };
 		A8B8B943283F749B0049982D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8B942283F749B0049982D /* Reachability.swift */; };
+		A8CBCB83285AFD170014CFF4 /* ResetPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CBCB82285AFD170014CFF4 /* ResetPViewController.swift */; };
 		A8CDF9BD284893EA002E50DA /* BoneandJoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8CDF9BC284893EA002E50DA /* BoneandJoints.plist */; };
 		A8D0BF50283DEE8100C6F19C /* Dentist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D0BF4F283DEE8100C6F19C /* Dentist.plist */; };
 		A8D0BF60283E2BF200C6F19C /* DoctorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */; };
@@ -81,6 +82,7 @@
 		A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8AC7504280E8F13001C1F40 /* Concerns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerns.swift; sourceTree = "<group>"; };
 		A8B8B942283F749B0049982D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A8CBCB82285AFD170014CFF4 /* ResetPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPViewController.swift; sourceTree = "<group>"; };
 		A8CDF9BC284893EA002E50DA /* BoneandJoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BoneandJoints.plist; sourceTree = "<group>"; };
 		A8D0BF4F283DEE8100C6F19C /* Dentist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Dentist.plist; sourceTree = "<group>"; };
 		A8D0BF5F283E2BF200C6F19C /* DoctorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorManager.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
+				A8CBCB82285AFD170014CFF4 /* ResetPViewController.swift */,
 				A8A72D572858743900573AC1 /* ForgotPwordViewController.swift */,
 				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
 				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
@@ -401,6 +404,7 @@
 				A8E71794282250F80095BFF2 /* CustomTableViewCell.swift in Sources */,
 				A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */,
 				A8D3CD94283F37F5005BC00D /* DoctorType.swift in Sources */,
+				A8CBCB83285AFD170014CFF4 /* ResetPViewController.swift in Sources */,
 				A8E71797282252C10095BFF2 /* DoctorsViewController.swift in Sources */,
 				A8DAAA702803FFFC00440CA3 /* ViewController.swift in Sources */,
 				A8D0BF60283E2BF200C6F19C /* DoctorManager.swift in Sources */,

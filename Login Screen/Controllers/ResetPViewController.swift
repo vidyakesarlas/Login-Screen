@@ -1,64 +1,54 @@
 //
-//  ForgotPwordViewController.swift
+//  ResetPViewController.swift
 //  Login Screen
 //
-//  Created by vidya.k on 14/06/22.
+//  Created by vidya.k on 16/06/22.
 //
 
 import UIKit
 
-class ForgotPwordViewController: UIViewController {
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var newPasswordTextField: UITextField!
-    var oldPassword: String = ""
-    var isPasswordValid = false
-    var networkManager = NetworkManager()
-    let defaults = UserDefaults.standard
+class ResetPViewController: UIViewController {
 
-    @IBOutlet weak var resetP: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var emailIDTextField: UITextField!
+    var networkManager = NetworkManager()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailIDTextField.layer.cornerRadius = 5
+        emailIDTextField.clipsToBounds = true
+        sendButton.layer.cornerRadius = 15
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationItem.setHidesBackButton(false, animated: true)
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        newPasswordTextField.layer.cornerRadius = 5
-        newPasswordTextField.clipsToBounds = true
-        confirmPasswordTextField.layer.cornerRadius = 5
-        confirmPasswordTextField.clipsToBounds = true
-        resetP.layer.cornerRadius = 15
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-       // self.navigationController?.navigationBar.barStyle = .black
-    }
-    
     func callHome(){
-        let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
+        let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as! ForgotPwordViewController
         self.navigationController?.pushViewController(homeVc, animated: true)
-      //  self.present(homeVc, animated: true, completion: nil)
     }
     
-    
-    @IBAction func resetPassword(_ sender: Any) {
-        let VC = ViewController()
-       // oldPassword = defaults.string(forKey: "userPassword")!
-        print("oldpassword is --\(oldPassword)")
-        isPasswordValid = ((newPasswordTextField.text?.isValidPassword()) != nil)
+    @IBAction func sendInstructions(_ sender: Any) {
+       
         if let reachability = try? Reachability(){
             if reachability.connection != .unavailable {
-                if isPasswordValid == true{
+                if ((emailIDTextField.text?.isValidEmail) == true){
                 networkManager.callAPI(userCompletionHandler: { status in
                     if status{
                         DispatchQueue.main.async {
-                            //self.defaults.set(self.userPassword, forKey: "userPassword")
-                            self.defaults.set(self.newPasswordTextField.text, forKey: "userPassword")
                             self.callHome()
                         }
-                        let alertContoller = UIAlertController (title: "Password changed successfully" , message: "Please enter the same password to login successfully", preferredStyle: .alert)
+                        let alertContoller = UIAlertController (title: "Instructions to reset password has been sent successfully to your email address" , message: "Create a new password", preferredStyle: .alert)
                         alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
                         self.present(alertContoller, animated: true, completion: nil)
+
                     }
                     else{
                         DispatchQueue.main.async{
@@ -72,7 +62,7 @@ class ForgotPwordViewController: UIViewController {
             }
                 else{
                     //self.passwordTxtField.layer.borderColor = UIColor.red.cgColor
-                    let alertContoller = UIAlertController (title: "Password incorrect" , message: "Please enter a password which has atleast each one of caps, smallcase, numeric, special characters", preferredStyle: .alert)
+                    let alertContoller = UIAlertController (title: "Mail incorrect" , message: "Please enter a mail which is of format user@some-mail.com", preferredStyle: .alert)
                     alertContoller.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
                     self.present(alertContoller, animated: true, completion: nil)
                 }
@@ -83,6 +73,10 @@ class ForgotPwordViewController: UIViewController {
                 self.present(alertContoller1, animated: true, completion: nil)
             }
         }
+        
+        
+        
+    }
     
     /*
     // MARK: - Navigation
@@ -93,5 +87,6 @@ class ForgotPwordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }
-}
+                    

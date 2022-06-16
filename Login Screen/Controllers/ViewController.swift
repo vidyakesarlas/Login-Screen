@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate{
     var window: UIWindow?
     @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isPasswordValid = false
     var networkManager = NetworkManager()
     let defaults = UserDefaults.standard
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,18 +61,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         navigationController?.isNavigationBarHidden = true
     }
     
-   
-    
     @IBAction func forgotPassword(_ sender: Any) {
 
-        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as! ForgotPwordViewController
-        //destinationVC.docType = selectedType
-        destinationVC.navigationItem.title = "Reset password"
-   self.navigationController?.pushViewController(destinationVC, animated: false)
-  // self.performSegue(withIdentifier: "resetPword" , sender: self)
+        self.performSegue(withIdentifier: "reset" , sender: self)
     }
- 
-    
+
     func assignbackground(){
            let background = UIImage(named: "steth19")
            var imageView : UIImageView!
@@ -175,11 +167,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        
-//        }else{
-//            let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
-//            self.navigationController?.pushViewController(homeVc, animated: false)
-//        }
 }
     }
 extension UIImage {
