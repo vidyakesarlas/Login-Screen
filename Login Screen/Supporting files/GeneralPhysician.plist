@@ -28,7 +28,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>5</string>
             <key>image</key>
             <string>Nagarjuna</string>
             <key>appmtBooked</key>
@@ -44,7 +44,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>12</string>
             <key>image</key>
             <string>Abheetha</string>
             <key>appmtBooked</key>
@@ -60,7 +60,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>8</string>
             <key>image</key>
             <string>Raghav</string>
             <key>appmtBooked</key>
@@ -76,7 +76,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>9</string>
             <key>image</key>
             <string>Spoorthy</string>
             <key>appmtBooked</key>
@@ -92,7 +92,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>7</string>
             <key>image</key>
             <string>Shanti</string>
             <key>appmtBooked</key>
@@ -124,7 +124,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>4</string>
             <key>image</key>
             <string>Arundati</string>
             <key>appmtBooked</key>
@@ -140,7 +140,7 @@
             <key>designation</key>
             <string>General Physician</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>5</string>
             <key>image</key>
             <string>Sunidhi</string>
             <key>appmtBooked</key>

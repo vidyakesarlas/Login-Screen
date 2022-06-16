@@ -76,7 +76,7 @@
 		<key>designation</key>
 		<string>Dental Care</string>
 		<key>yrs</key>
-		<string>6</string>
+		<string>8</string>
 		<key>image</key>
 		<string>Vidya</string>
         <key>appmtBooked</key>
@@ -140,7 +140,7 @@
 		<key>designation</key>
 		<string>Dental Care</string>
 		<key>yrs</key>
-		<string>5</string>
+		<string>4</string>
 		<key>image</key>
 		<string>Sushma</string>
         <key>appmtBooked</key>

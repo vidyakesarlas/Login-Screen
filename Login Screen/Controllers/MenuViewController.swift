@@ -87,6 +87,7 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         configureSearchController()
         self.definesPresentationContext = true
         self.automaticallyAdjustsScrollViewInsets = false

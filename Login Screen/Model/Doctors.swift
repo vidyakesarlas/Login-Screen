@@ -53,5 +53,4 @@ class Doctors: Codable{
             //check the error parameter and handle any errors
         }
     }
-    
 }

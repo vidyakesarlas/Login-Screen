@@ -19,6 +19,7 @@
 		A8A1D1B5281277CD0061175C /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1D1B4281277CD0061175C /* RoundedView.swift */; };
 		A8A606BA2829474600599BA8 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606B92829474600599BA8 /* PopUpWindow.swift */; };
 		A8A606BC282948C100599BA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A606BB282948C100599BA8 /* Extensions.swift */; };
+		A8A72D582858743900573AC1 /* ForgotPwordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A72D572858743900573AC1 /* ForgotPwordViewController.swift */; };
 		A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */; };
 		A8AC7505280E8F13001C1F40 /* Concerns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC7504280E8F13001C1F40 /* Concerns.swift */; };
 		A8B8B943283F749B0049982D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8B942283F749B0049982D /* Reachability.swift */; };
@@ -76,6 +77,7 @@
 		A8A1D1B4281277CD0061175C /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		A8A606B92829474600599BA8 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 		A8A606BB282948C100599BA8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A8A72D572858743900573AC1 /* ForgotPwordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwordViewController.swift; sourceTree = "<group>"; };
 		A8AC7500280E7CFD001C1F40 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8AC7504280E8F13001C1F40 /* Concerns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerns.swift; sourceTree = "<group>"; };
 		A8B8B942283F749B0049982D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A8DAAA6F2803FFFC00440CA3 /* ViewController.swift */,
+				A8A72D572858743900573AC1 /* ForgotPwordViewController.swift */,
 				A8D2840A28115A4F006FA34D /* MenuViewController.swift */,
 				A8AC7504280E8F13001C1F40 /* Concerns.swift */,
 				A8E71796282252C10095BFF2 /* DoctorsViewController.swift */,
@@ -390,6 +393,7 @@
 			files = (
 				A8D2840B28115A4F006FA34D /* MenuViewController.swift in Sources */,
 				A8AC7501280E7CFD001C1F40 /* NetworkManager.swift in Sources */,
+				A8A72D582858743900573AC1 /* ForgotPwordViewController.swift in Sources */,
 				A8D284082811593B006FA34D /* MenuCollectionViewCell.swift in Sources */,
 				A8D4D62C2806D76800AD9C20 /* String+Extension.swift in Sources */,
 				A8E71799282286760095BFF2 /* Doctors.swift in Sources */,

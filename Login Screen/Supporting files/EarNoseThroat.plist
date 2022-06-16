@@ -22,7 +22,7 @@
             <key>name</key>
             <string>Nagarjuna</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 650 ~ Consultation fees</string>
             <key>address</key>
             <string>Kormangala 5 block, BGS Clinic</string>
             <key>designation</key>
@@ -38,13 +38,13 @@
             <key>name</key>
             <string>Abheetha</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 700 ~ Consultation fees</string>
             <key>address</key>
             <string>Jayanagar 5 block, BGS Clinic</string>
             <key>designation</key>
             <string>Ear Nose Throat</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>5</string>
             <key>image</key>
             <string>Abheetha</string>
             <key>appmtBooked</key>
@@ -54,13 +54,13 @@
             <key>name</key>
             <string>Raghav</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 800 ~ Consultation fees</string>
             <key>address</key>
             <string>Doopanapalya, BGS Clinic</string>
             <key>designation</key>
             <string>Ear Nose Throat</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>4</string>
             <key>image</key>
             <string>Raghav</string>
             <key>appmtBooked</key>
@@ -70,13 +70,13 @@
             <key>name</key>
             <string>Spoorthy</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 400 ~ Consultation fees</string>
             <key>address</key>
             <string>KS Town, Nethralaya Clinic</string>
             <key>designation</key>
             <string>Ear Nose Throat</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>3</string>
             <key>image</key>
             <string>Spoorthy</string>
             <key>appmtBooked</key>
@@ -86,13 +86,13 @@
             <key>name</key>
             <string>Shanti</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 500 ~ Consultation fees</string>
             <key>address</key>
             <string>Sampige road, Malleswaram, Nethralaya Clinic</string>
             <key>designation</key>
             <string>Ear Nose Throat</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>4</string>
             <key>image</key>
             <string>Shanti</string>
             <key>appmtBooked</key>
@@ -102,7 +102,7 @@
             <key>name</key>
             <string>Reena</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 700 ~ Consultation fees</string>
             <key>address</key>
             <string>Baiyappanahalli, Nethralaya Clinic</string>
             <key>designation</key>
@@ -118,13 +118,13 @@
             <key>name</key>
             <string>Arundati</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 750 ~ Consultation fees</string>
             <key>address</key>
             <string>Magadi road, Nethralaya Clinic</string>
             <key>designation</key>
             <string>Ear Nose Throat</string>
             <key>yrs</key>
-            <string>6</string>
+            <string>6.5</string>
             <key>image</key>
             <string>Arundati</string>
             <key>appmtBooked</key>
@@ -134,7 +134,7 @@
             <key>name</key>
             <string>Sunidhi</string>
             <key>fees</key>
-            <string>Rs 600 ~ Consultation fees</string>
+            <string>Rs 800 ~ Consultation fees</string>
             <key>address</key>
             <string>Majestic, Nethralaya Clinic</string>
             <key>designation</key>

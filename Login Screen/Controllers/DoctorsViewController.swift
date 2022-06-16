@@ -13,7 +13,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
     let searchController = UISearchController(searchResultsController: nil)
     
     func configureSearchController(){
-        let myNewView=UIView(frame: CGRect(x: 0, y: 0, width: self.searchController.searchBar.frame.size.width, height: 13))
+        let myNewView=UIView(frame: CGRect(x: 0, y: 3, width: self.searchController.searchBar.frame.size.width, height: 35))
         myNewView.backgroundColor=UIColor.lightGray
         self.view.addSubview(myNewView)
         myNewView.addSubview(searchController.searchBar)
@@ -32,7 +32,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         searchController.searchBar.backgroundColor = UIColor.white
         searchController.searchBar.isTranslucent = true
         searchController.searchBar.searchTextField.textColor = UIColor.black
-        navigationItem.titleView?.layoutIfNeeded()
+       // navigationItem.titleView?.layoutIfNeeded()
     }
     func updateSearchResults(for searchController: UISearchController){
         let searchText = searchController.searchBar.text!
@@ -58,6 +58,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         searchedItem.removeAll()
         doctorTableView.reloadData()
     }
+    var sortedData: [Doctors] = []
     var data: [Doctors] = []
     var newData: [Doctors] = []
     var docType: DoctorType = .none
@@ -119,6 +120,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
         //fetch doctors to display
         let plistsource: URL = docUrl
         data = doctorList.getDoctorObject(path: plistsource)
+        sortedData = data.sorted { $0.name < $1.name }
         print(data)
     }
     
@@ -423,7 +425,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
             
             switch docType {
             case .dental:
-                let dentistt = data[indexPath.row]
+                let dentistt = sortedData[indexPath.row]
                 print("data wanted-\(dentistt)")
                 cell.doctName.text = dentistt.name
                 cell.doctImage.image = UIImage(named: dentistt.image)
@@ -442,7 +444,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .dermatology:
-                let dermatologist = data[indexPath.row]
+                let dermatologist = sortedData[indexPath.row]
                 cell.doctName.text = dermatologist.name
                 cell.doctImage.image = UIImage(named: dermatologist.image)
                 cell.experience.text = dermatologist.yrs + " years experience overall"
@@ -460,7 +462,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .digestive:
-                let digestive = data[indexPath.row]
+                let digestive = sortedData[indexPath.row]
                 cell.doctName.text = digestive.name
                 cell.doctImage.image = UIImage(named: digestive.image)
                 cell.experience.text = digestive.yrs + " years experience overall"
@@ -478,7 +480,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .ent:
-                let ent = data[indexPath.row]
+                let ent = sortedData[indexPath.row]
                 cell.doctName.text = ent.name
                 cell.doctImage.image = UIImage(named: ent.image)
                 cell.experience.text = ent.yrs + " years experience overall"
@@ -496,7 +498,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .eyeSpecialist:
-                let eye = data[indexPath.row]
+                let eye = sortedData[indexPath.row]
                 cell.doctName.text = eye.name
                 cell.doctImage.image = UIImage(named: eye.image)
                 cell.experience.text = eye.yrs + " years experience overall"
@@ -514,7 +516,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .childSpecialist:
-                let childSpecialist = data[indexPath.row]
+                let childSpecialist = sortedData[indexPath.row]
                 cell.doctName.text = childSpecialist.name
                 cell.doctImage.image = UIImage(named: childSpecialist.image)
                 cell.experience.text = childSpecialist.yrs + " years experience overall"
@@ -532,7 +534,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .gynaecology:
-                let gynaecologist = data[indexPath.row]
+                let gynaecologist = sortedData[indexPath.row]
                 cell.doctName.text = gynaecologist.name
                 cell.doctImage.image = UIImage(named: gynaecologist.image)
                 cell.experience.text = gynaecologist.yrs + " years experience overall"
@@ -550,8 +552,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .homeopathy:
-                
-                let homeopathist = data[indexPath.row]
+                let homeopathist = sortedData[indexPath.row]
                 cell.doctName.text = homeopathist.name
                 cell.doctImage.image = UIImage(named: homeopathist.image)
                 cell.experience.text = homeopathist.yrs + " years experience overall"
@@ -568,8 +569,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .orthopaedician:
-                
-                let orthopaedecian = data[indexPath.row]
+                let orthopaedecian = sortedData[indexPath.row]
                 cell.doctName.text = orthopaedecian.name
                 cell.doctImage.image = UIImage(named: orthopaedecian.image)
                 cell.experience.text = orthopaedecian.yrs + " years experience overall"
@@ -586,7 +586,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .psychiatry:
-                let pshychiatrist = data[indexPath.row]
+                let pshychiatrist = sortedData[indexPath.row]
                 cell.doctName.text = pshychiatrist.name
                 cell.doctImage.image = UIImage(named: pshychiatrist.image)
                 cell.experience.text = pshychiatrist.yrs + " years experience overall"
@@ -604,7 +604,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .sexSpecialist:
-                let sexSpecialist = data[indexPath.row]
+                let sexSpecialist = sortedData[indexPath.row]
                 cell.doctName.text = sexSpecialist.name
                 cell.doctImage.image = UIImage(named: sexSpecialist.image)
                 cell.experience.text = sexSpecialist.yrs + " years experience overall"
@@ -622,7 +622,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UIPopoverP
                 }
                 
             case .generalPhysician:
-                let physician = data[indexPath.row]
+                let physician = sortedData[indexPath.row]
                 cell.doctName.text = physician.name
                 cell.doctImage.image = UIImage(named: physician.image)
                 cell.experience.text = physician.yrs + " years experience overall"

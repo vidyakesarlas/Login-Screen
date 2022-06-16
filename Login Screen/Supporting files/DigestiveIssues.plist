@@ -12,7 +12,7 @@
         <key>designation</key>
         <string>Digestive issues</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>7</string>
         <key>image</key>
         <string>Varshitha</string>
         <key>appmtBooked</key>
@@ -22,13 +22,13 @@
         <key>name</key>
         <string>Ramya</string>
         <key>fees</key>
-        <string>Rs 600 ~ Consultation fees</string>
+        <string>Rs 700 ~ Consultation fees</string>
         <key>address</key>
         <string>Kormangala 5th Block, Vikas Clinic</string>
         <key>designation</key>
         <string>Digestive issues</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>8</string>
         <key>image</key>
         <string>Ramya</string>
         <key>appmtBooked</key>
@@ -38,13 +38,13 @@
         <key>name</key>
         <string>Mohan</string>
         <key>fees</key>
-        <string>Rs 700 ~ Consultation fees</string>
+        <string>Rs 900 ~ Consultation fees</string>
         <key>address</key>
         <string>Near Jayanagar KFC, Vikas Clinic</string>
         <key>designation</key>
         <string>Digestive issues</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>10</string>
         <key>image</key>
         <string>Mohan</string>
         <key>appmtBooked</key>
@@ -54,13 +54,13 @@
         <key>name</key>
         <string>Sundaran</string>
         <key>fees</key>
-        <string>Rs 600 ~ Consultation fees</string>
+        <string>Rs 650 ~ Consultation fees</string>
         <key>address</key>
         <string>Near JP Nagar 6th block, Vikas Clinic</string>
         <key>designation</key>
         <string>Digestive issues</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>3</string>
         <key>image</key>
         <string>Sundaran</string>
         <key>appmtBooked</key>
@@ -70,13 +70,13 @@
         <key>name</key>
         <string>Vivek</string>
         <key>fees</key>
-        <string>Rs 400 ~ Consultation fees</string>
+        <string>Rs 600 ~ Consultation fees</string>
         <key>address</key>
         <string>Yelechenahalli, Vikas Clinic</string>
         <key>designation</key>
         <string>Digestive issues</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>7</string>
         <key>image</key>
         <string>Vivek</string>
         <key>appmtBooked</key>

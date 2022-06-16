@@ -28,7 +28,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>7</string>
         <key>image</key>
         <string>Vandita</string>
         <key>appmtBooked</key>
@@ -44,7 +44,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>5</string>
         <key>image</key>
         <string>Bhavya</string>
         <key>appmtBooked</key>
@@ -60,7 +60,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>3</string>
         <key>image</key>
         <string>Trupthi</string>
         <key>appmtBooked</key>
@@ -76,7 +76,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>4</string>
         <key>image</key>
         <string>Disha</string>
         <key>appmtBooked</key>
@@ -92,7 +92,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>4</string>
         <key>image</key>
         <string>Kala</string>
         <key>appmtBooked</key>
@@ -108,7 +108,7 @@
         <key>designation</key>
         <string>Dermatology</string>
         <key>yrs</key>
-        <string>6</string>
+        <string>4</string>
         <key>image</key>
         <string>Nirmala</string>
         <key>appmtBooked</key>
