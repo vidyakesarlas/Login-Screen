@@ -17,6 +17,7 @@ class ResetPViewController: UIViewController {
         emailIDTextField.layer.cornerRadius = 5
         emailIDTextField.clipsToBounds = true
         sendButton.layer.cornerRadius = 15
+        //.font(.system(size: 30, weight: .bold, design: .default))
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationItem.setHidesBackButton(false, animated: true)
         // Do any additional setup after loading the view.

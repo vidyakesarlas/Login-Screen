@@ -19,50 +19,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarApp.backgroundColor = .systemBlue
         navBarApp.barTintColor = .white
         navBarApp.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-     //   let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if let isLogin = UserDefaults.standard.object(forKey: "login") as? Bool {
-
-           //If already login then show Dashboard screen
-           self.showDashboardScreen()
-        } else {
-
-           //If not login then show Login screen
-           self.showLoginScreen()
-        }
-        
+//        if let isLogin = UserDefaults.standard.object(forKey: "login") as? Bool {
+//
+//           //If already login then show Dashboard screen
+//           self.showDashboardScreen()
+//        } else {
+//
+//           //If not login then show Login screen
+//           self.showLoginScreen()
+//        }
+//        
         return true
     }
 
-    func showLoginScreen() {
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController: ViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
-
-         var navigationController = UINavigationController()
-         navigationController = UINavigationController(rootViewController: loginViewController)
-
-         //It removes all view controllers from the navigation controller then sets the new root view controller and it pops.
-         window?.rootViewController = navigationController
-
-         //Navigation bar is hidden
-         navigationController.isNavigationBarHidden = true
-    }
-
-    func showDashboardScreen() {
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let dashboardViewController: MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
-
-         var navigationController = UINavigationController()
-    navigationController = UINavigationController(rootViewController: dashboardViewController)
-
-         //It removes all view controllers from the navigation controller then sets the new root view controller and it pops.
-         window?.rootViewController = navigationController
-
-         //Navigation bar is hidden
-         navigationController.isNavigationBarHidden = true
-     }
-    
+//    func showLoginScreen() {
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let loginViewController: ViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
+//
+//         var navigationController = UINavigationController()
+//         navigationController = UINavigationController(rootViewController: loginViewController)
+//
+//         //It removes all view controllers from the navigation controller then sets the new root view controller and it pops.
+//         window?.rootViewController = navigationController
+//
+//         //Navigation bar is hidden
+//         navigationController.isNavigationBarHidden = true
+//    }
+//
+//    func showDashboardScreen() {
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let dashboardViewController: MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+//
+//         var navigationController = UINavigationController()
+//    navigationController = UINavigationController(rootViewController: dashboardViewController)
+//
+//         //It removes all view controllers from the navigation controller then sets the new root view controller and it pops.
+//         window?.rootViewController = navigationController
+//
+//         //Navigation bar is hidden
+//         navigationController.isNavigationBarHidden = true
+//     }
+//    
     
     
     

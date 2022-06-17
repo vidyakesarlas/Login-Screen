@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             
         }
 
-        blueView.layer.cornerRadius = 55
+//        blueView.layer.cornerRadius = 55
         self.navigationController?.isNavigationBarHidden = true
         userNameTxtField.delegate = self
         passwordTxtField.delegate = self
